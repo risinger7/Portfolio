@@ -2,7 +2,6 @@
 
 import "./styles.css";
 import useTheme from "../hooks/useTheme";
-import Main from "../components/main/Main";
 import Navbar from "@/components/navbar/Navbar";
 /* import Image from "next/image" */
 import Link from "next/link";
@@ -26,7 +25,6 @@ export default function Home() {
   return (
     <div className="flex flex-col items-start">
       <Navbar />
-      <Main />
       <div className="flex space-x-20 mr-10 mt-20">
         <div className="w-36 h-36 bg-rose-500">colors</div>
         <div className="w-36 h-36 bg-purple-600">colors</div>

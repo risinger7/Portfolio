@@ -4,7 +4,7 @@
 
 /* Light theme (default) */
 :root {
-  --foreground: #0b1096;
+  --foreground: #000000;
   --background: #f7f7f7;
   --theme-button-background: #181452;
 }
