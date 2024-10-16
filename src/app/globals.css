@@ -2,19 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light theme (default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1096;
+  --background: #f7f7f7;
+  --theme-button-background: #181452;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Applied to tailwind */
+.dark {
+  --background: #171717;
+  --foreground: #ededed;
+  --theme-button-background: #b42fdc;
+}
+/* Dark theme */
+/* @media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
+    --background: #9bb696;
     --foreground: #ededed;
   }
+} */
+
+html {
+  font-family: --font-noto;
 }
 
 body {
+  transition: background-color 0.3s ease, color 0.3s ease;
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;

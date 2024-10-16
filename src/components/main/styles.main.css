@@ -1,0 +1,15 @@
+.grid-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  border: 2px solid red;
+  /* follow rule of 2/3 for layout */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto 1fr auto;
+}
+
+@media screen and (max-width: 500px) {
+  .grid-container {
+    border: 2px solid blue;
+  }
+}
