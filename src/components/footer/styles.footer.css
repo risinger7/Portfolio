@@ -1,0 +1,10 @@
+.footer-container {
+  background-color: grey;
+  color: yellowgreen;
+  display: flex;
+  min-height: 24rem;
+}
+
+.info {
+  color: aqua;
+}

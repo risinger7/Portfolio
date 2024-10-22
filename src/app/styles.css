@@ -9,11 +9,3 @@ start with light theme */
   color: rgb(255, 255, 255);
   border-radius: 2rem;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  .theme-button {
-    background-color: var(--theme-button-background);
-    color: #ededed;
-    border: 2px solid rgb(255, 255, 255);
-  }
-} */

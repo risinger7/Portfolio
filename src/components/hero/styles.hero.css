@@ -1,0 +1,55 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid blue;
+  background: var(--background);
+  min-height: 85vh;
+}
+
+.hero-content {
+  border: 1px solid red;
+  padding: 2rem;
+}
+
+.background-image {
+  min-height: 75vh;
+  background-size: cover;
+  background-image: url("../../../public/phone/phone-zoom.jpg");
+}
+
+.hero-title {
+  color: var(--foreground);
+  font-size: 100px;
+  line-height: 0.7;
+  transition: all 1s ease;
+}
+
+.addition {
+  color: rgb(8, 8, 8);
+  opacity: 0;
+}
+
+.hero-title.addition:hover {
+  color: rgb(8, 8, 8);
+  opacity: 1;
+}
+
+.text-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.hero-text {
+  font-size: 16px;
+}
+
+.ball {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: rgb(66, 218, 155);
+}

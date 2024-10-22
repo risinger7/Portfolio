@@ -4,34 +4,26 @@
 
 /* Light theme (default) */
 :root {
-  --foreground: #000000;
-  --background: #f7f7f7;
-  --theme-button-background: #181452;
+  --background: rgb(250, 248, 242);
+  --foreground: #121212;
+  --yellow: #241c06;
+  --turq: rgb(66, 218, 152);
 }
 
-/* Applied to tailwind */
 .dark {
-  --background: #171717;
-  --foreground: #ededed;
-  --theme-button-background: #b42fdc;
+  --background: rgb(16, 16, 16);
+  --foreground: rgb(251, 250, 244);
+  --yellow: #eebd33;
 }
-/* Dark theme */
-/* @media (prefers-color-scheme: light) {
-  :root {
-    --background: #9bb696;
-    --foreground: #ededed;
-  }
-} */
 
 html {
   font-family: --font-noto;
-}
-
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
 }
 
 @layer utilities {
@@ -39,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+/* SCROLL-BAR */
+/* 
+*::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */

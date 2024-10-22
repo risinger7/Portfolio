@@ -1,12 +1,21 @@
+import Link from "next/link";
 import "./styles.main.css";
-import { switzer700, switzer200, switzer400 } from "@/styles/styles.fonts";
+import {
+  switzer700,
+  switzer200,
+  switzer400,
+  urbanist400,
+  urbanist700,
+} from "@/styles/styles.fonts";
+
 export default function Main() {
   return (
     <div className="grid-container mt-12">
-      <h1 className={`${switzer700.className} grid-item title`}>
+      <Link href="/">Home</Link>
+      <h1 className={`${urbanist700.className} grid-item title`}>
         Title is something good a very long intro or something
       </h1>
-      <p className={`${switzer400.className} grid-item content`}>
+      <p className={`${urbanist400.className} grid-item content`}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
         iaculis risus viverra, vestibulum magna vitae, commodo mauris. Phasellus
         congue purus in congue ultricies. Suspendisse rutrum elementum tellus ut
@@ -19,6 +28,13 @@ export default function Main() {
         interdum quis tellus id rutrum. Suspendisse in dapibus nulla, non ornare
         ipsum.
       </p>
+      <img
+        className="grid-item grid-image"
+        src="./space/space3.jpg"
+        alt="Picture of the author"
+        width={500}
+        height={500}
+      ></img>
     </div>
   );
 }
