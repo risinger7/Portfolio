@@ -7,11 +7,15 @@
 */
 
 .navbar-container {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 4rem;
   overflow: hidden;
+  background-color: var(--background);
 }
 
 .navbar {
@@ -19,6 +23,7 @@
   align-items: center;
   gap: 2rem;
   transition: all 1s ease;
+  z-index: 900;
 }
 
 .visible {
@@ -64,17 +69,19 @@
 
   .navbar {
     padding: 2rem;
+    top: 0;
     right: 0;
-    min-height: calc(100% - 6rem);
+    min-height: 100vh;
     top: 4rem;
-    min-width: 8rem;
+    min-width: 50%;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     display: flex;
+    background-color: var(--background);
   }
 
   .navbar-container {
     justify-content: end;
-    padding-right: 1rem;
+    padding: 1rem;
   }
 }

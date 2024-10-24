@@ -1,23 +1,49 @@
+import { useEffect, useState } from "react";
 import "./styles.hero.css";
-import {
-  switzer700,
-  switzer200,
-  urbanist200,
-  urbanist400,
-  urbanist700,
-  urbanist900,
-} from "@/styles/styles.fonts";
+import { urbanist400, urbanist900 } from "@/styles/styles.fonts";
 
-export function Hero() {
+export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+  const [nextSectionVisable, setNextSectionVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("scrolling Y: ", window.scrollY);
+      setScrollY(window.scrollY);
+    };
+
+    // Check when to reveal the next section (e.g., after scrolling 80vh)
+    if (window.scrollY > window.innerHeight * 0.8) {
+      setNextSectionVisible(true);
+    } else {
+      setNextSectionVisible(false);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const zoomFactor = 1 + scrollY / 600; // Adjust zoom based on scroll
+  console.log("zoom", zoomFactor);
   return (
     <div>
       <div className="hero-container">
-        <div className="hero-content">
-          <h1 className={`${urbanist900.className} hero-title`}>Fullstack</h1>
-          <h1 className={`${urbanist900.className} hero-title`}>Developer</h1>
-          <h1 className={`${urbanist900.className} hero-title addition`}>
-            Designer
-          </h1>
+        <div className="background-image-container">
+          <img
+            className="background-image"
+            src="/phone/phone-zoom.jpg"
+            alt="Hero Background"
+            style={{ transform: `scale(${zoomFactor})` }}
+          />
+        </div>
+        <div className="hero-content ">
+          <div className="titles">
+            <h1 className={`${urbanist900.className} hero-title`}>Fullstack</h1>
+            <h1 className={`${urbanist900.className} hero-title`}>Developer</h1>
+            <h1 className={`${urbanist900.className} hero-fade`}>Designer</h1>
+          </div>
           <div className="text-container">
             <p className={`hero-text ${urbanist400.className}`}>
               Hi, I'm Viktor
@@ -29,6 +55,7 @@ export function Hero() {
             </p>
           </div>
         </div>
+
         <div className="ball"></div>
       </div>
 

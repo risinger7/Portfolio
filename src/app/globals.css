@@ -8,12 +8,16 @@
   --foreground: #121212;
   --yellow: #241c06;
   --turq: rgb(66, 218, 152);
+  --fade: rgb(138, 138, 138);
+  --hero-background: rgba(250, 248, 242, 0.4);
 }
 
 .dark {
   --background: rgb(16, 16, 16);
   --foreground: rgb(251, 250, 244);
   --yellow: #eebd33;
+  --fade: rgb(8, 8, 8);
+  --hero-background: rgba(0, 0, 0, 0.4);
 }
 
 html {

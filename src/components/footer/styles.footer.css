@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: grey;
+  background-color: var(--background);
   color: yellowgreen;
   display: flex;
   min-height: 24rem;
