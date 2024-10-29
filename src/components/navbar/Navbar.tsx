@@ -39,6 +39,7 @@ export default function Navbar() {
           <Link href="/">Home</Link>
           <Link href="/main">Main</Link>
           <Link href="/design">Design</Link>
+          <Link href="/projects">Projects</Link>
           <ThemeSwitch />
         </ul>
       )}
@@ -52,6 +53,7 @@ export default function Navbar() {
           <Link href="/">Home</Link>
           <Link href="/main">Main</Link>
           <Link href="/design">Design</Link>
+          <Link href="/projects">Projects</Link>
           <ThemeSwitch />
         </ul>
       )}

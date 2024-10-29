@@ -12,7 +12,7 @@ export default function Hero() {
       setScrollY(window.scrollY);
     };
 
-    // Check when to reveal the next section (e.g., after scrolling 80vh)
+    // Check when to reveal the next section (ex. after scrolling 80vh)
     if (window.scrollY > window.innerHeight * 0.8) {
       setNextSectionVisible(true);
     } else {
@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   const zoomFactor = 1 + scrollY / 600; // Adjust zoom based on scroll
-  console.log("zoom", zoomFactor);
+
   return (
     <div>
       <div className="hero-container">

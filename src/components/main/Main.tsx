@@ -1,12 +1,6 @@
 import Link from "next/link";
 import "./styles.main.css";
-import {
-  switzer700,
-  switzer200,
-  switzer400,
-  urbanist400,
-  urbanist700,
-} from "@/styles/styles.fonts";
+import { urbanist400, urbanist700 } from "@/styles/styles.fonts";
 
 export default function Main() {
   return (
