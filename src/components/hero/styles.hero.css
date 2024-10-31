@@ -31,7 +31,7 @@
 .hero-content {
   margin-top: 4rem;
   margin-inline: 1rem;
-  background-color: var(--hero-background); /* Black w/opacity/see-through */
+  background-color: var(--hero-background);
   /*   border: 1px solid red; */
   color: var(--foreground);
   padding: 2rem;
@@ -50,20 +50,9 @@
   padding: 0;
 }
 
-.hero-fade {
-  opacity: 0;
-  color: var(--fade);
-  font-size: clamp(2rem, 2rem + 3vh, 10rem);
-  line-height: 0.8;
-  transition: all 1s ease;
-}
-
-.hero-fade:hover {
-  opacity: 1;
-}
-
 .text-container {
-  margin-top: 0rem;
+  margin-left: 4px;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   max-width: 600px;
@@ -72,11 +61,3 @@
 .hero-text {
   font-size: 18px;
 }
-
-/* 
-.ball {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  background-color: rgb(66, 218, 155);
-} */

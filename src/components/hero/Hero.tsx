@@ -8,7 +8,6 @@ export default function Hero() {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("scrolling Y: ", window.scrollY);
       setScrollY(window.scrollY);
     };
 
@@ -24,8 +23,8 @@ export default function Hero() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const zoomFactor = 1 + scrollY / 600; // Adjust zoom based on scroll
+  // Adjust zoom based on scroll
+  const zoomFactor = 1 + scrollY / 600;
 
   return (
     <div>
@@ -42,7 +41,6 @@ export default function Hero() {
           <div className="titles">
             <h1 className={`${urbanist900.className} hero-title`}>Fullstack</h1>
             <h1 className={`${urbanist900.className} hero-title`}>Developer</h1>
-            <h1 className={`${urbanist900.className} hero-fade`}>Designer</h1>
           </div>
           <div className="text-container">
             <p className={`hero-text ${urbanist400.className}`}>

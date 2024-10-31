@@ -3,6 +3,14 @@ import Image from "next/image";
 import Navbar from "../navbar/Navbar";
 import styles from "./projects.module.css";
 import Link from "next/link";
+import {
+  urbanist200,
+  urbanist400,
+  urbanist700,
+  urbanist900,
+  bai400,
+  bai700,
+} from "@/styles/styles.fonts";
 
 export default function Projects() {
   return (
@@ -17,10 +25,12 @@ export default function Projects() {
                 alt="clira-image"
                 className={styles.project__image}
               ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                {"Clira".toUpperCase()}
+              </div>
             </div>
           </Link>
           <div className={styles.item}>
-            {" "}
             <img
               src="./clira/image61.png"
               alt="clira-image"
