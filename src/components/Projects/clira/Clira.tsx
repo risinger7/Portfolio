@@ -1,24 +1,29 @@
-import Link from "next/link";
-import styles from "./project.module.css";
+"use client";
+import styles from "./clira.module.css";
 import { urbanist400, urbanist700 } from "@/styles/styles.fonts";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-interface ProjectProps {
-  title: string;
-  imageSrc: string;
-  imageAlt: string;
-  /*   content: string;
-  color: string;
-  background: string; */
-}
+export default function ProjectClira() {
+  const router = useRouter();
 
-export default function Project(props: ProjectProps) {
-  const { title, imageSrc, imageAlt } = props;
+  const handleGoBack = () => {
+    if (router) {
+      router.back();
+    }
+  };
+
+  useEffect(() => {
+    if (!router) return;
+  }, [router]);
 
   return (
     <div className={`${styles.grid__container} mt-12`}>
-      <Link href="/">Home</Link>
-      <h1 className={`${urbanist700.className} ${styles.grid__item} ${title}`}>
-        {title}
+      <button onClick={() => handleGoBack()}>back</button>
+      <h1
+        className={`${urbanist700.className} ${styles.grid__item} ${styles.title}`}
+      >
+        Clira
       </h1>
       <p
         className={`${urbanist400.className} ${styles.grid__item} ${styles.content}`}
@@ -37,11 +42,11 @@ export default function Project(props: ProjectProps) {
       </p>
       <img
         className={`${styles.grid__item} ${styles.grid__image}`}
-        src={imageSrc}
-        alt={imageAlt}
+        src={"./clira/image61.png"}
+        alt={"Image of an inventory"}
         width={500}
         height={500}
-      ></img>
+      />
     </div>
   );
 }

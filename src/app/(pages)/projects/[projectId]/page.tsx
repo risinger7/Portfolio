@@ -1,5 +1,5 @@
 "use client";
-import Project from "@/components/Projects/project/Project";
+import ProjectClira from "@/components/Projects/clira/Clira";
 import { useParams } from "next/navigation";
 
 export default function ProjectPage() {
@@ -7,12 +7,6 @@ export default function ProjectPage() {
   console.log("params", pararms);
 
   if (pararms.projectId) {
-    return (
-      <Project
-        title="Clira"
-        imageSrc="./space/space3.jpg"
-        imageAlt="picture of space"
-      />
-    );
+    return <ProjectClira />;
   }
 }
