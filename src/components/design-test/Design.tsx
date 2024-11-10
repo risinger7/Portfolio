@@ -6,7 +6,7 @@ import {
   switzer700,
   bai400,
   bai700,
-} from "@/styles/styles.fonts";
+} from "../styles/styles.fonts";
 import "./styles.css";
 import Navbar from "../navbar/Navbar";
 console.log(urbanist400, urbanist700, bai400, bai700);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles.hero.css";
-import { urbanist400, urbanist900 } from "@/styles/styles.fonts";
+import { urbanist400, urbanist900 } from "../styles/styles.fonts";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);

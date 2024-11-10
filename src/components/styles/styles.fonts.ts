@@ -10,9 +10,9 @@ const urbanist700 = Urbanist({ subsets: ["latin"], weight: "700" });
 const urbanist900 = Urbanist({ subsets: ["latin"], weight: "900" });
 
 // local fonts
-const switzer200 = localFont({ src: "../app/fonts/Switzer-Light.ttf" });
-const switzer400 = localFont({ src: "../app/fonts/Switzer-Regular.ttf" });
-const switzer700 = localFont({ src: "../app/fonts/Switzer-Bold.ttf" });
+const switzer200 = localFont({ src: "../../app/fonts/Switzer-Light.ttf" });
+const switzer400 = localFont({ src: "../../app/fonts/Switzer-Regular.ttf" });
+const switzer700 = localFont({ src: "../../app/fonts/Switzer-Bold.ttf" });
 
 export {
   bai400,

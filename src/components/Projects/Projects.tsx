@@ -10,7 +10,7 @@ import {
   urbanist900,
   bai400,
   bai700,
-} from "@/styles/styles.fonts";
+} from "@/components/styles/styles.fonts";
 
 export default function Projects() {
   return (
@@ -26,33 +26,46 @@ export default function Projects() {
                 className={styles.project__image}
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                {"Clira".toUpperCase()}
+                Clira
               </div>
             </div>
           </Link>
-          <div className={styles.item}>
-            <img
-              src="./clira/image61.png"
-              alt="clira-image"
-              className={styles.project__image}
-            ></img>
-          </div>
-          <div className={styles.item}>
-            {" "}
-            <img
-              src="./clira/image61.png"
-              alt="clira-image"
-              className={styles.project__image}
-            ></img>
-          </div>
-          <div className={styles.item}>
-            {" "}
-            <img
-              src="./clira/image61.png"
-              alt="clira-image"
-              className={styles.project__image}
-            ></img>
-          </div>
+          <Link href="projects/clira">
+            <div className={styles.item}>
+              <img
+                src="./clira/image61.png"
+                alt="clira-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Clira
+              </div>
+            </div>
+          </Link>
+          <Link href="projects/clira">
+            <div className={styles.item}>
+              <img
+                src="./clira/image61.png"
+                alt="clira-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Clira
+              </div>
+            </div>
+          </Link>
+          <Link href="projects/clira">
+            <div className={styles.item}>
+              <img
+                src="./clira/image61.png"
+                alt="clira-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Clira
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </>

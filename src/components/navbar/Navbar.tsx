@@ -2,7 +2,7 @@
 import Link from "next/link";
 import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import "./styles.navbar.css";
-import { bai400 } from "@/styles/styles.fonts";
+import { bai400 } from "../styles/styles.fonts";
 import { useEffect, useState } from "react";
 export default function Navbar() {
   // close on widowsize.. figure out

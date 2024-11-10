@@ -2,7 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light theme (default) */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  scrollbar-width: thin;
+}
+/* Light theme (default) // #f97583; #f78c6c; lägg in*/
+
 :root {
   --background: rgb(250, 248, 242);
   --foreground: #121212;
@@ -18,16 +28,13 @@
   --yellow: #eebd33;
   --fade: rgb(8, 8, 8);
   --hero-background: rgba(0, 0, 0, 0.4);
+  --grid-item-border: rgb(251, 250, 244);
 }
 
 html {
   font-family: --font-noto;
   color: var(--foreground);
   background: var(--background);
-}
-
-* {
-  scrollbar-width: thin;
 }
 
 @layer utilities {

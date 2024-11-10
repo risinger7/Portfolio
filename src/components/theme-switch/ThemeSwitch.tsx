@@ -2,6 +2,7 @@
 import { FiSun, FiMoon } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
+import "./themeSwitch.css";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -9,14 +10,13 @@ export default function ThemeSwitch() {
 
   useEffect(() => setMounted(true), []);
 
-  if (!mounted)
-    return <div className="w-10 h-10 bg-slate-800">not mounted</div>;
+  if (!mounted) return <div></div>;
 
   if (resolvedTheme === "dark") {
-    return <FiSun onClick={() => setTheme("light")} />;
+    return <FiSun className="icon" onClick={() => setTheme("light")} />;
   }
 
   if (resolvedTheme === "light") {
-    return <FiMoon onClick={() => setTheme("dark")} />;
+    return <FiMoon className="icon" onClick={() => setTheme("dark")} />;
   }
 }

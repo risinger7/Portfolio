@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./styles.main.css";
-import { urbanist400, urbanist700 } from "@/styles/styles.fonts";
+import { urbanist400, urbanist700 } from "../styles/styles.fonts";
 
 export default function Main() {
   return (
