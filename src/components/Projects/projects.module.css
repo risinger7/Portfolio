@@ -10,11 +10,11 @@
   margin-top: 12rem;
   width: 90%;
   max-width: 1000px;
-  gap: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   margin-bottom: 4rem;
+  gap: 2rem;
 }
 
 .item {
@@ -65,7 +65,6 @@
 @media (800px < width) {
   .grid {
     grid-template-columns: 1fr 1fr;
-    min-height: 400px;
   }
 }
 

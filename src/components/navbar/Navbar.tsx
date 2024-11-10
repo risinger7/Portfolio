@@ -36,11 +36,16 @@ export default function Navbar() {
     <div className="navbar-container">
       {isScreenLarge && (
         <ul className={`${bai400.className} navbar`}>
-          <Link href="/">Home</Link>
-          <Link href="/main">Main</Link>
-          <Link href="/design">Design</Link>
-          <Link href="/projects">Projects</Link>
-          <ThemeSwitch />
+          <Link className="navbar-item" href="/">
+            Home
+          </Link>
+          <Link className="navbar-item" href="/projects">
+            Projects
+          </Link>
+          <Link href="/about">About</Link>
+          <div className="navbar-item">
+            <ThemeSwitch />
+          </div>
         </ul>
       )}
 
@@ -50,11 +55,22 @@ export default function Navbar() {
             isBurgerOpen ? "visble" : "hidden"
           }`}
         >
-          <Link href="/">Home</Link>
-          <Link href="/main">Main</Link>
-          <Link href="/design">Design</Link>
-          <Link href="/projects">Projects</Link>
-          <ThemeSwitch />
+          <Link className="navbar-item" href="/">
+            Home
+          </Link>
+
+          <Link className="navbar-item" href="/main">
+            Main
+          </Link>
+          <Link className="navbar-item" href="/design">
+            Design
+          </Link>
+          <Link className="navbar-item" href="/projects">
+            Projects
+          </Link>
+          <div className="navbar-item">
+            <ThemeSwitch />
+          </div>
         </ul>
       )}
 

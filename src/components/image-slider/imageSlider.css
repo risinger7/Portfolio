@@ -4,6 +4,14 @@
   overflow: hidden;
 }
 
+.grid-item {
+  grid-column: content-start / content-end;
+  justify-self: center;
+  justify-items: center;
+  height: 100%;
+  max-width: 800px;
+}
+
 .image-slider {
   display: flex;
   width: 100%;

@@ -12,10 +12,10 @@ export default function Footer() {
   };
 
   return (
-    <div ref={divRef} className="footer-container">
-      <p onClick={scrollToElement} className="info">
-        footer
-      </p>
-    </div>
+    <div
+      onClick={scrollToElement}
+      ref={divRef}
+      className="footer-container"
+    ></div>
   );
 }

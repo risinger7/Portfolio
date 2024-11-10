@@ -1,6 +1,6 @@
 /* Navbar */
 
-/* 
+/*
 1. navbar - visas vid stora skärm-storlekar
 2. navbarPhone - visas när burgare är öppen
 
@@ -24,6 +24,15 @@
   gap: 2rem;
   transition: all 1s ease;
   z-index: 900;
+}
+
+.navbar-item {
+  color: var(--foreground);
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-item:hover {
+  color: var(--redish);
 }
 
 .visible {
