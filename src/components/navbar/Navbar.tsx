@@ -4,11 +4,15 @@ import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import "./styles.navbar.css";
 import { bai400 } from "../styles/styles.fonts";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Navbar() {
   // close on widowsize.. figure out
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const [isScreenLarge, setIsScreenLarge] = useState<boolean>(false);
 
+  const router = useRouter();
+  // media query closing burger
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 600px)");
     // Function to update state when the screen size changes
@@ -16,7 +20,7 @@ export default function Navbar() {
       if (e.matches) {
         setIsBurgerOpen(false);
       }
-      setIsScreenLarge(e.matches); // true if screen is over 600px, false otherwise
+      setIsScreenLarge(e.matches);
     };
     // Set the initial value
     setIsScreenLarge(mediaQuery.matches);
@@ -26,23 +30,29 @@ export default function Navbar() {
     }
     // Listen for changes to the screen size
     mediaQuery.addEventListener("change", handleResize);
-    // Cleanup event listener on component unmount
+    // Cleanup
     return () => {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
 
+  const handleRouteClick = () => {
+    console.log("route", router);
+  };
+
   return (
     <div className="navbar-container">
       {isScreenLarge && (
         <ul className={`${bai400.className} navbar`}>
-          <Link className="navbar-item" href="/">
+          <a className="navbar-item" href="/">
             Home
-          </Link>
+          </a>
           <Link className="navbar-item" href="/projects">
             Projects
           </Link>
+
           <Link href="/about">About</Link>
+
           <div className="navbar-item">
             <ThemeSwitch />
           </div>
@@ -58,16 +68,10 @@ export default function Navbar() {
           <Link className="navbar-item" href="/">
             Home
           </Link>
-
-          <Link className="navbar-item" href="/main">
-            Main
-          </Link>
-          <Link className="navbar-item" href="/design">
-            Design
-          </Link>
           <Link className="navbar-item" href="/projects">
             Projects
           </Link>
+          <Link href="/about">About</Link>
           <div className="navbar-item">
             <ThemeSwitch />
           </div>

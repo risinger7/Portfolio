@@ -1,0 +1,15 @@
+/* animations.css or globals.css */
+.page-enter-start {
+  padding-top: 12rem;
+  opacity: 0;
+  background-color: aqua;
+  transform: translateY(-200px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.page-enter-show {
+  padding-top: 12rem;
+  background-color: var(--background);
+  opacity: 1;
+  transform: translateY(0);
+}

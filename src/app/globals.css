@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 *,
 *::after,
 *::before {
@@ -11,7 +17,8 @@
 * {
   scrollbar-width: thin;
 }
-/* Light theme (default) // #f97583; #f78c6c; lägg in rgb(240, 111, 111); */
+
+/* Light theme (default) */
 
 :root {
   --background: rgb(250, 248, 242);
@@ -37,10 +44,4 @@ html {
   font-family: --font-noto;
   color: var(--foreground);
   background: var(--background);
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
