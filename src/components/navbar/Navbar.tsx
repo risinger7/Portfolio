@@ -4,14 +4,12 @@ import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import "./styles.navbar.css";
 import { bai400 } from "../styles/styles.fonts";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   // close on widowsize.. figure out
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const [isScreenLarge, setIsScreenLarge] = useState<boolean>(false);
 
-  const router = useRouter();
   // media query closing burger
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 600px)");
@@ -36,22 +34,20 @@ export default function Navbar() {
     };
   }, []);
 
-  const handleRouteClick = () => {
-    console.log("route", router);
-  };
-
   return (
     <div className="navbar-container">
       {isScreenLarge && (
         <ul className={`${bai400.className} navbar`}>
-          <a className="navbar-item" href="/">
+          <Link href="/" className="navbar-item">
             Home
-          </a>
+          </Link>
           <Link className="navbar-item" href="/projects">
             Projects
           </Link>
 
-          <Link href="/about">About</Link>
+          <Link className="navbar-item" href={"/about"}>
+            About
+          </Link>
 
           <div className="navbar-item">
             <ThemeSwitch />
@@ -59,6 +55,7 @@ export default function Navbar() {
         </ul>
       )}
 
+      {/* PHONE */}
       {!isScreenLarge && (
         <ul
           className={`${bai400.className} navbar ${

@@ -1,11 +1,8 @@
 "use client";
-import PageTransitionLink from "@/components/styles/PageTransition";
-import PageTransition from "@/components/styles/PageTransition";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import "./animation.css";
 
-const About = () => {
+const About = ({ isExiting }: { isExiting: boolean }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   // on load

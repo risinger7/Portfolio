@@ -1,7 +1,10 @@
+"use client";
 import Navbar from "@/components/navbar/Navbar";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { sleep } from "@/utils/sleep";
 
-export default function AboutLayout({
+export default function GeneralLayout({
   children,
 }: {
   children: React.ReactNode;
