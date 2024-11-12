@@ -4,12 +4,12 @@ import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import "./styles.navbar.css";
 import { bai400 } from "../styles/styles.fonts";
 import { useEffect, useState } from "react";
+import { TransitionLink } from "./TransitionLink";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
-  // close on widowsize.. figure out
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const [isScreenLarge, setIsScreenLarge] = useState<boolean>(false);
-
   // media query closing burger
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 600px)");
@@ -33,21 +33,40 @@ export default function Navbar() {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
+  const pathname = usePathname();
 
   return (
     <div className="navbar-container">
       {isScreenLarge && (
         <ul className={`${bai400.className} navbar`}>
-          <Link href="/" className="navbar-item">
-            Home
-          </Link>
-          <Link className="navbar-item" href="/projects">
-            Projects
-          </Link>
-
-          <Link className="navbar-item" href={"/about"}>
-            About
-          </Link>
+          <div
+            className={`${pathname === "/" ? "current-item" : "navbar-item"}`}
+          >
+            <TransitionLink pageTransition="home-transition" href="/">
+              Home
+            </TransitionLink>
+          </div>
+          <div
+            className={`${
+              pathname === "/projects" ? "current-item" : "navbar-item"
+            }`}
+          >
+            <TransitionLink
+              pageTransition="projects-transition"
+              href="/projects"
+            >
+              Projects
+            </TransitionLink>
+          </div>
+          <div
+            className={`${
+              pathname === "/about" ? "current-item" : "navbar-item"
+            }`}
+          >
+            <TransitionLink pageTransition="about-transition" href="/about">
+              About
+            </TransitionLink>
+          </div>
 
           <div className="navbar-item">
             <ThemeSwitch />
@@ -62,13 +81,32 @@ export default function Navbar() {
             isBurgerOpen ? "visble" : "hidden"
           }`}
         >
-          <Link className="navbar-item" href="/">
-            Home
-          </Link>
-          <Link className="navbar-item" href="/projects">
-            Projects
-          </Link>
-          <Link href="/about">About</Link>
+          <div
+            className={`${pathname === "/" ? "current-item" : "navbar-item"}`}
+          >
+            <TransitionLink pageTransition="home-transition" href="/">
+              Home
+            </TransitionLink>
+          </div>
+          <div
+            className={`${
+              pathname === "/projects" ? "current-item" : "navbar-item"
+            }`}
+          >
+            <TransitionLink pageTransition="projects-transition" href="/">
+              Projects
+            </TransitionLink>
+          </div>
+          <div
+            className={`${
+              pathname === "/about" ? "current-item" : "navbar-item"
+            }`}
+          >
+            <TransitionLink pageTransition="about-transition" href="/">
+              About
+            </TransitionLink>
+          </div>
+
           <div className="navbar-item">
             <ThemeSwitch />
           </div>

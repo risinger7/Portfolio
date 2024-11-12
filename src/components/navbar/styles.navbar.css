@@ -9,7 +9,7 @@
 .navbar-container {
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 900;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,10 +28,15 @@
 
 .navbar-item {
   color: var(--foreground);
-  transition: color 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .navbar-item:hover {
+  color: var(--redish);
+  transform: scale(1.1);
+}
+
+.current-item {
   color: var(--redish);
 }
 

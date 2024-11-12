@@ -1,28 +1,37 @@
 "use client";
-import { useEffect, useState } from "react";
-import "./animation.css";
 
-const About = ({ isExiting }: { isExiting: boolean }) => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-
-  // on load
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
+export default function About() {
   return (
-    <div
-      className={`page-enter-start ${
-        isVisible ? "page-enter-show" : "page-enter-start"
-      }`}
-    >
-      <h1>About page here</h1>
+    <div className="pt-32" style={{ overflow: "hidden" }}>
+      <h1>About page</h1>
       <p>
-        This portfolio is created using Next.js which is a React framework,
-        React in turn is a Javascript library.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero quia
+        autem itaque sit? Quaerat, dolorem explicabo. Incidunt odit amet optio
+        quas earum debitis aperiam. Culpa libero enim quisquam necessitatibus
+        eligendi.
+      </p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero quia
+        autem itaque sit? Quaerat, dolorem explicabo. Incidunt odit amet optio
+        quas earum debitis aperiam. Culpa libero enim quisquam necessitatibus
+        eligendi.
       </p>
     </div>
   );
-};
+}
 
-export default About;
+/* "use client";
+import Navbar from "@/components/navbar/Navbar";
+
+export default function AboutTemplate({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <>
+      <Navbar />
+      {children}
+    </>
+  );
+} */

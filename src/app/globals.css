@@ -45,3 +45,43 @@ html {
   color: var(--foreground);
   background: var(--background);
 }
+
+.stop-overflow {
+  overflow: hidden;
+}
+
+/* page-transition on the body element */
+
+.home-transition {
+  opacity: 0;
+  filter: blur(3px);
+}
+
+.about-transition {
+  transform: translate(-200px);
+  overflow: hidden;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.projects-transition {
+  transform: translateY(100vh);
+  overflow: hidden;
+}
+
+body {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes scaleRotate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
