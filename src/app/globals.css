@@ -53,25 +53,29 @@ html {
 /* page-transition on the body element */
 
 .home-transition {
+  overflow: hidden;
   opacity: 0;
   filter: blur(3px);
+  transform: scale(1.2);
 }
 
 .about-transition {
-  transform: translate(-200px);
   overflow: hidden;
+  transform: translateX(-200px);
   opacity: 0;
   filter: blur(4px);
 }
 
 .projects-transition {
-  transform: translateY(100vh);
+  opacity: 0;
+  filter: blur(4px);
   overflow: hidden;
+  transform: translateY(-400px);
 }
 
 body {
   opacity: 1;
-  transition: all 1s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 @keyframes scaleRotate {

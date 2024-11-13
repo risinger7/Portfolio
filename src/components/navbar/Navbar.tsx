@@ -93,7 +93,10 @@ export default function Navbar() {
               pathname === "/projects" ? "current-item" : "navbar-item"
             }`}
           >
-            <TransitionLink pageTransition="projects-transition" href="/">
+            <TransitionLink
+              pageTransition="projects-transition"
+              href="/projects"
+            >
               Projects
             </TransitionLink>
           </div>
@@ -102,7 +105,7 @@ export default function Navbar() {
               pathname === "/about" ? "current-item" : "navbar-item"
             }`}
           >
-            <TransitionLink pageTransition="about-transition" href="/">
+            <TransitionLink pageTransition="about-transition" href="/about">
               About
             </TransitionLink>
           </div>

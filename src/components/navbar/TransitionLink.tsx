@@ -17,13 +17,20 @@ export const TransitionLink = ({
   const pathname = usePathname();
 
   useEffect(() => {
+    const body = document.querySelector("body");
+    body?.classList.add("stop-overflow");
     const removeClassWithDelay = async () => {
       const body = document.querySelector("body");
-      await sleep(1000); // Waits 4 seconds
-      pageTransition && body?.classList.remove(pageTransition);
+      await sleep(800);
+      if (pageTransition) {
+        body?.classList.remove(pageTransition);
+      }
+      await sleep(4000);
+      if (pageTransition) {
+        body?.classList.remove("stop-overflow");
+      }
     };
-
-    removeClassWithDelay(); // Call the async function
+    removeClassWithDelay();
   }, []);
 
   const sleep = (ms: number) => {
