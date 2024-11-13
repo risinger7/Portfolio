@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 /* Phone layout */
@@ -13,24 +14,32 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   gap: 2rem;
 }
 
 .item {
   border-radius: 1rem;
-  max-height: 200px;
+  height: 200px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .project__image {
+  background-color: var(--redish);
   overflow: hidden;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: all 1s ease-in-out;
+}
+
+.project__noImage {
+  background-color: rgb(111, 202, 255);
+  height: 100%;
+  width: 100%;
 }
 
 .overlayText {
@@ -49,6 +58,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.item:hover .project__image {
+  transform: scale(1.2);
 }
 
 .item:hover .overlayText {

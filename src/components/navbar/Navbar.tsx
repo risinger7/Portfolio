@@ -9,8 +9,9 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
-  const [isScreenLarge, setIsScreenLarge] = useState<boolean>(false);
+  const [isScreenLarge, setIsScreenLarge] = useState<boolean>(true);
   // media query closing burger
+  console.log("isburgeropen: ", isBurgerOpen);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 600px)");
     // Function to update state when the screen size changes

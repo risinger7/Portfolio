@@ -21,18 +21,6 @@ export default function Projects() {
           <Link href="projects/clira">
             <div className={styles.item}>
               <img
-                src="./clira/image61.png"
-                alt="clira-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Clira
-              </div>
-            </div>
-          </Link>
-          <Link href="projects/clira">
-            <div className={styles.item}>
-              <img
                 src="./clira/clira123.jpg"
                 alt="clira-image"
                 className={styles.project__image}
@@ -42,27 +30,62 @@ export default function Projects() {
               </div>
             </div>
           </Link>
-          <Link href="projects/clira">
+          <Link href="projects/toys">
             <div className={styles.item}>
               <img
-                src="./clira/image61.png"
-                alt="clira-image"
+                src="./toys/toys2.png"
+                alt="event-image"
                 className={styles.project__image}
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Clira
+                ReJoi
               </div>
             </div>
           </Link>
-          <Link href="projects/clira">
+
+          <Link href="projects/game">
             <div className={styles.item}>
               <img
-                src="./clira/image61.png"
+                src="./game/snappyblock.jpg"
                 alt="clira-image"
                 className={styles.project__image}
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Clira
+                Snappy-block
+              </div>
+            </div>
+          </Link>
+
+          <Link href="projects/event">
+            <div className={styles.item}>
+              <div className={styles.project__noImage}></div>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Event
+              </div>
+            </div>
+          </Link>
+
+          <Link href="projects/phone">
+            <div className={styles.item}>
+              <img
+                src="./phone/phone-persp.jpg"
+                alt="phone-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Phone design
+              </div>
+            </div>
+          </Link>
+          <Link href="projects/remote">
+            <div className={styles.item}>
+              <img
+                src="./remote/remote-persp-back.jpg"
+                alt="remote-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Remote design
               </div>
             </div>
           </Link>
@@ -70,14 +93,4 @@ export default function Projects() {
       </div>
     </>
   );
-}
-
-{
-  /* <Image
-              src={cliraLogo}
-              alt="Clira Logo"
-              width={100} // Specify desired width
-              height={100} // Specify desired height
-              priority // If this is above the fold
-            /> */
 }

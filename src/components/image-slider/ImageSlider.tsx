@@ -8,8 +8,6 @@ type ImageSliderProps = {
 
 export default function ImageSlider({ images }: ImageSliderProps) {
   const [imgIndex, setImgIndex] = useState(0);
-  console.log("index: ", imgIndex);
-  console.log("images", images);
 
   function showNextImage() {
     setImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
