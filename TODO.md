@@ -19,8 +19,11 @@
 
 ## about/contact
 
-- cv download
-- cv grid
+- cv download, _CHECK_
+- cv grid, naaah skip.
+
+- about section
+- contact
 
 **features**
 

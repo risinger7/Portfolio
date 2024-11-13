@@ -33,7 +33,7 @@ export default function Projects() {
           <Link href="projects/clira">
             <div className={styles.item}>
               <img
-                src="./clira/image61.png"
+                src="./clira/clira123.jpg"
                 alt="clira-image"
                 className={styles.project__image}
               ></img>
