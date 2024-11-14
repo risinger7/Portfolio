@@ -63,7 +63,7 @@ export default function Hero() {
             onClick={() => handleClickContact()}
             className={`${urbanist700.className} hero-contact-button`}
           >
-            Contant me
+            Contact me
           </button>
         </div>
 

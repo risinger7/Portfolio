@@ -73,6 +73,10 @@
   background-color: var(--foreground);
   color: var(--background);
 }
+.grid-link:hover {
+  background-color: var(--redish);
+  color: white;
+}
 
 /* Project colors */
 .pink {
