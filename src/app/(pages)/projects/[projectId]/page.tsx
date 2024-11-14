@@ -22,7 +22,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       images={project.images}
       title={project.title}
       content={project.content}
+      color={project.color}
+      link={project.link}
       githubLink={project.githubLink}
+      icons={project.icons}
     />
   );
 }

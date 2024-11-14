@@ -26,11 +26,10 @@
   content: "";
   top: 50%;
   left: 50%;
-
   position: absolute;
   opacity: 1;
   background-color: transparent;
-  border: 1px solid var(--redish);
+  border: 1px solid var(--foreground);
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -54,6 +53,31 @@
   font-size: 1rem;
   line-height: 1.2;
   color: var(--foreground);
+}
+
+.grid-icons {
+  padding-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.grid-icon {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 1px solid var(--foreground);
+  border-radius: 0.5rem;
+  color: var(--foreground);
+}
+
+.grid-link {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+/* Project colors */
+.pink {
+  color: #d31efe;
+  background-color: rgb(43, 153, 255);
 }
 
 /* Medium screens - Tablets */

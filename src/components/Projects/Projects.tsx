@@ -30,6 +30,19 @@ export default function Projects() {
               </div>
             </div>
           </Link>
+
+          <Link href="projects/game">
+            <div className={styles.item}>
+              <img
+                src="./game/snappyblock1.png"
+                alt="clira-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Snappy-block
+              </div>
+            </div>
+          </Link>
           <Link href="projects/toys">
             <div className={styles.item}>
               <img
@@ -39,19 +52,6 @@ export default function Projects() {
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
                 ReJoi
-              </div>
-            </div>
-          </Link>
-
-          <Link href="projects/game">
-            <div className={styles.item}>
-              <img
-                src="./game/snappyblock.jpg"
-                alt="clira-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Snappy-block
               </div>
             </div>
           </Link>
