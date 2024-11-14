@@ -1,11 +1,20 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./about.css";
 import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 
 export default function About() {
   const [current, setCurrent] = useState("about");
+  const searchParams = useSearchParams();
+  const message = searchParams.get("message");
+  console.log("message", message);
+  useEffect(() => {
+    if (message) {
+      setCurrent(message);
+    }
+  }, []);
 
   const handleShow = (feature: string) => {
     setCurrent(feature);
@@ -85,7 +94,11 @@ function ContactInfo() {
       <p className={urbanist400.className}>Click to copy to clipboard.</p>
       <p className={urbanist400.className}>Reach me via email at:</p>
       <p className={urbanist700.className}>
-        <button id="emailButton" onClick={copyToClipboard}>
+        <button
+          id="emailButton"
+          className="email-button"
+          onClick={copyToClipboard}
+        >
           viktor.risinger@gmail.com
         </button>
       </p>

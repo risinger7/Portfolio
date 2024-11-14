@@ -1,10 +1,13 @@
+"use client";
 import { useEffect, useState } from "react";
 import "./styles.hero.css";
-import { urbanist400, urbanist900 } from "../styles/styles.fonts";
+import { urbanist400, urbanist700, urbanist900 } from "../styles/styles.fonts";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
   const [nextSectionVisable, setNextSectionVisible] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +28,10 @@ export default function Hero() {
   }, []);
   // Adjust zoom based on scroll
   const zoomFactor = 1 + scrollY / 600;
+
+  function handleClickContact() {
+    router.push("/about?message=contact");
+  }
 
   return (
     <div>
@@ -52,6 +59,12 @@ export default function Hero() {
               continuously learning and exploring new technologies.
             </p>
           </div>
+          <button
+            onClick={() => handleClickContact()}
+            className={`${urbanist700.className} hero-contact-button`}
+          >
+            Contant me
+          </button>
         </div>
 
         <div className="ball"></div>

@@ -57,7 +57,22 @@
   flex-direction: column;
   max-width: 600px;
 }
-
 .hero-text {
   font-size: 18px;
+}
+
+.hero-contact-button {
+  margin-top: 1rem;
+  background-color: rgb(15, 54, 180);
+  color: white;
+  padding-top: 0.5rem;
+  padding-inline: 1rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-contact-button:hover {
+  background-color: rgb(15, 102, 160);
+  transform: translateX(8px) scale(1.1);
 }
