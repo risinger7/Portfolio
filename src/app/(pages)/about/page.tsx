@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import "./about.css";
 import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
-import { AnimatePresence, motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
 export default function About() {
