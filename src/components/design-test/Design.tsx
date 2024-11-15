@@ -9,7 +9,7 @@ import {
 } from "../styles/styles.fonts";
 import "./styles.css";
 import Navbar from "../navbar/Navbar";
-console.log(urbanist400, urbanist700, bai400, bai700);
+
 export default function Design() {
   return (
     <div className="flex flex-col items-center gap-10">

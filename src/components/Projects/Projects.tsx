@@ -56,11 +56,11 @@ export default function Projects() {
             </div>
           </Link>
 
-          <Link href="projects/event">
+          <Link href="projects/firstwebsite">
             <div className={styles.item}>
               <div className={styles.project__noImage}></div>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Event
+                Karaoke suggestions
               </div>
             </div>
           </Link>

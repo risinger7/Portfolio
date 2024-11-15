@@ -6,10 +6,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
 export default function About() {
-  const [current, setCurrent] = useState("about");
+  const [current, setCurrent] = useState<string | null>("aboutinfo");
   const searchParams = useSearchParams();
   const message = searchParams.get("message");
-  console.log("message", message);
   useEffect(() => {
     if (message) {
       setCurrent(message);
@@ -17,45 +16,47 @@ export default function About() {
   }, []);
 
   const handleShow = (feature: string) => {
-    setCurrent(feature);
+    setCurrent(() => null);
+    setTimeout(() => setCurrent(feature), 100);
   };
 
   return (
     <div className="about-container">
       <div className={`about-content-container ${current}`}>
         <div className="about-content">
-          {current === "about" && <AboutInfo />}
-          {current === "contact" && <ContactInfo />}
-          {current === "download" && <DownloadInfo current={current} />}
+          {current === "aboutinfo" && <AboutInfo />}
+          {current === "contactinfo" && <ContactInfo />}
+          {current === "downloadinfo" && <DownloadInfo />}
         </div>
       </div>
-
-      <div className={` about-flex`}>
+      <div className="about-flex-buttons">
         <button
           className={`${
-            current === "about" ? urbanist700.className : urbanist400.className
+            current === "aboutinfo"
+              ? `${urbanist700.className} about-flex-current`
+              : urbanist400.className
           } about-flex-item`}
-          onClick={() => handleShow("about")}
+          onClick={() => handleShow("aboutinfo")}
         >
           About
         </button>
         <button
           className={`${
-            current === "contact"
-              ? urbanist700.className
+            current === "contactinfo"
+              ? `${urbanist700.className} about-flex-current`
               : urbanist400.className
           } about-flex-item`}
-          onClick={() => handleShow("contact")}
+          onClick={() => handleShow("contactinfo")}
         >
           Contact
         </button>
         <button
           className={`${
-            current === "download"
-              ? urbanist700.className
+            current === "downloadinfo"
+              ? `${urbanist700.className} about-flex-current`
               : urbanist400.className
           } about-flex-item`}
-          onClick={() => handleShow("download")}
+          onClick={() => handleShow("downloadinfo")}
         >
           Download CV
         </button>
@@ -67,19 +68,18 @@ export default function About() {
 /* When extra time, refactor these 3 into one component */
 function AboutInfo() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <div className="aboutinfo">
       <h1 className={`${urbanist700.className} about-header`}>About</h1>
       <p className={urbanist400.className}>
-        My name is Viktor and welcome to my portfolio. It was created using
-        React with the Next.js framework. I choose to keep the project minimal
-        without animation- and css-libraries which was a great exercise,
-        especially the transitions and smaller animations.
+        My name is Viktor and welcome to my portfolio. I am a junior fullstack
+        developer who is curious and eager to learn. This portfolio was created
+        using React with Next js.
       </p>
       <p className={urbanist400.className}>
         Click the buttons down below in order to contact me or download my
         resume.
       </p>
-    </motion.div>
+    </div>
   );
 }
 
@@ -89,7 +89,7 @@ function ContactInfo() {
     alert("Copied " + "viktor.risinger@gmail.com" + " to the clipboard.");
   }
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <div className="contactinfo">
       <h1 className={`${urbanist700.className} about-header`}>Contact</h1>
       <p className={urbanist400.className}>Click to copy to clipboard.</p>
       <p className={urbanist400.className}>Reach me via email at:</p>
@@ -102,13 +102,13 @@ function ContactInfo() {
           viktor.risinger@gmail.com
         </button>
       </p>
-    </motion.div>
+    </div>
   );
 }
 
-function DownloadInfo({ current }: { current: string }) {
+function DownloadInfo() {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <div className="downloadinfo">
       <div className="download-cv">
         <h1 className={`${urbanist700.className} about-header`}>Download</h1>
         <a href="/cv/CV.pdf" target="_blank" rel="noopener noreferrer">
@@ -117,6 +117,6 @@ function DownloadInfo({ current }: { current: string }) {
           </button>
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }

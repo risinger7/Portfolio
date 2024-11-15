@@ -48,6 +48,25 @@
   transition: all 1s ease;
   margin: 0;
   padding: 0;
+  position: relative;
+}
+.hero-title::after {
+  content: attr(data-shadow);
+  position: absolute;
+  color: var(--bluish);
+  opacity: 0.8;
+  top: 5px;
+  left: 5px;
+  transform: translateX(-8px) translateY(-2px) scale(1);
+  font-size: inherit;
+  line-height: inherit;
+  transition: all 1s ease;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+.hero-title:hover::after {
+  text-shadow: 0 0 20px var(--bluish), 0 0 20px white, 0 0 30px var(--bluish);
 }
 
 .text-container {
@@ -63,7 +82,7 @@
 
 .hero-contact-button {
   margin-top: 1rem;
-  background-color: rgb(15, 54, 180);
+  background-color: var(--bluish);
   color: white;
   padding-top: 0.5rem;
   padding-inline: 1rem;
@@ -73,6 +92,6 @@
 }
 
 .hero-contact-button:hover {
-  background-color: rgb(15, 102, 160);
+  background-color: var(--oredish);
   transform: translateX(8px) scale(1.1);
 }

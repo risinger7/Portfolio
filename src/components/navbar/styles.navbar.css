@@ -33,12 +33,12 @@
 }
 
 .navbar-item:hover {
-  color: var(--redish);
+  color: var(--oredish);
   transform: scale(1.1);
 }
 
 .current-item {
-  color: var(--redish);
+  color: var(--bluish);
 }
 
 .visible {

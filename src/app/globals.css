@@ -29,6 +29,8 @@
   --hero-background: rgba(250, 248, 242, 0.4);
   --oredish: #f78c6c;
   --redish: #f97583;
+  --bluish: rgb(15, 102, 160);
+  --yellowish: #eebd33;
 }
 
 .dark {

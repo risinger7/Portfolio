@@ -59,7 +59,7 @@ export const projectData: ProjectData = {
     content: "Text om Remote here",
     color: "",
     icons: [],
-    link: "",
+    link: "https://risinger7.github.io/Karaoke-suggestions/",
     githubLink: "",
   },
   phone: {
@@ -71,7 +71,8 @@ export const projectData: ProjectData = {
       "/phone/phone-front.jpg",
     ],
     title: "Phone",
-    content: "Text om phone here",
+    content:
+      "For the final assignment in my industrial CAD design course, I created a cellphone model. I began with a simple foundation and gradually added complexity as I refined the design. The entire process was carried out in Autodesk Alias using surface modeling techniques. Once the model was complete, I transitioned to Autodesk VRED to create detailed renders. I'm extremely pleased with the final result—a sleek and slim-looking phone that reflects both functionality and aesthetic appeal.",
     color: "",
     icons: [],
     link: "",
@@ -87,7 +88,8 @@ export const projectData: ProjectData = {
     ],
     title: "Remote",
     content: "Text om Remote here",
-    color: "",
+    color:
+      "One of the first CAD models I ever created was in Autodesk Alias. After mastering the basics of surface modeling, we were introduced to one of our final projects: designing a remote control. For this project, I envisioned a remote control for a smart TV. My goal was to reduce the number of buttons typically found on conventional remotes. Rather than overwhelming users with numerous options, I focused on simplifying the design by emphasizing essential functions like navigation arrows and a central home button. The final design aimed to create an intuitive and streamlined user experience, eliminating the clutter of unnecessary buttons while still offering the core functionality needed for smart TV control.",
     icons: [],
     link: "",
     githubLink: "",
