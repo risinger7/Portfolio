@@ -1,10 +1,5 @@
 "use client";
-import ProjectClira from "@/components/Projects/clira/Clira";
-import ProjectPhone from "@/components/Projects/phone/Phone";
 import Project from "@/components/Projects/project/Project";
-import ProjectRemote from "@/components/Projects/remote/Remote";
-import { useParams, usePathname } from "next/navigation";
-
 import { projectData } from "./projectData";
 
 type ProjectPageProps = {

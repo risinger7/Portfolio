@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
-  const [nextSectionVisable, setNextSectionVisible] = useState(false);
+  /* const [nextSectionVisable, setNextSectionVisible] = useState(false); */
   const router = useRouter();
 
   useEffect(() => {
@@ -15,11 +15,12 @@ export default function Hero() {
     };
 
     // Check when to reveal the next section (ex. after scrolling 80vh)
-    if (window.scrollY > window.innerHeight * 0.8) {
+    // Todo: if adding more feauters below hero.
+    /*  if (window.scrollY > window.innerHeight * 0.8) {
       setNextSectionVisible(true);
     } else {
       setNextSectionVisible(false);
-    }
+    } */
 
     window.addEventListener("scroll", handleScroll);
     return () => {

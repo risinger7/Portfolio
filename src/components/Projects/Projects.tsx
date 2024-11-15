@@ -1,16 +1,8 @@
-import Image from "next/image";
-/* import cliraLogo from "../../../public/clira/Clira-Logo.svg"; */
+"use client";
 import Navbar from "../navbar/Navbar";
 import styles from "./projects.module.css";
 import Link from "next/link";
-import {
-  urbanist200,
-  urbanist400,
-  urbanist700,
-  urbanist900,
-  bai400,
-  bai700,
-} from "@/components/styles/styles.fonts";
+import { urbanist900 } from "@/components/styles/styles.fonts";
 
 export default function Projects() {
   return (

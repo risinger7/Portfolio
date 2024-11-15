@@ -35,11 +35,15 @@ export default function ImageSlider({ images }: ImageSliderProps) {
           <ChevronRight className="image-animation" size={64} />
         </button>
       </div>
-      <div>
-        {images.map((button, index) => {
-          return <button>index</button>;
-        })}
-      </div>
     </div>
   );
+}
+
+/* TODO: add navigate buttons in image. */
+{
+  /* <div>
+{images.map(() => {
+  return <button>index</button>;
+})}
+</div> */
 }

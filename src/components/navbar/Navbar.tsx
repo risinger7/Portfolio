@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import ThemeSwitch from "../theme-switch/ThemeSwitch";
 import "./styles.navbar.css";
 import { bai400 } from "../styles/styles.fonts";
