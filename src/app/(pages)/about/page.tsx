@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import "./about.css";
 import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
 import { useSearchParams } from "next/navigation";
@@ -20,47 +20,49 @@ export default function About() {
   };
 
   return (
-    <div className="about-container">
-      <div className={`about-content-container ${current}`}>
-        <div className="about-content">
-          {current === "aboutinfo" && <AboutInfo />}
-          {current === "contactinfo" && <ContactInfo />}
-          {current === "downloadinfo" && <DownloadInfo />}
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="about-container">
+        <div className={`about-content-container ${current}`}>
+          <div className="about-content">
+            {current === "aboutinfo" && <AboutInfo />}
+            {current === "contactinfo" && <ContactInfo />}
+            {current === "downloadinfo" && <DownloadInfo />}
+          </div>
+        </div>
+        <div className="about-flex-buttons">
+          <button
+            className={`${
+              current === "aboutinfo"
+                ? `${urbanist700.className} about-flex-current`
+                : urbanist400.className
+            } about-flex-item`}
+            onClick={() => handleShow("aboutinfo")}
+          >
+            About
+          </button>
+          <button
+            className={`${
+              current === "contactinfo"
+                ? `${urbanist700.className} about-flex-current`
+                : urbanist400.className
+            } about-flex-item`}
+            onClick={() => handleShow("contactinfo")}
+          >
+            Contact
+          </button>
+          <button
+            className={`${
+              current === "downloadinfo"
+                ? `${urbanist700.className} about-flex-current`
+                : urbanist400.className
+            } about-flex-item`}
+            onClick={() => handleShow("downloadinfo")}
+          >
+            Download CV
+          </button>
         </div>
       </div>
-      <div className="about-flex-buttons">
-        <button
-          className={`${
-            current === "aboutinfo"
-              ? `${urbanist700.className} about-flex-current`
-              : urbanist400.className
-          } about-flex-item`}
-          onClick={() => handleShow("aboutinfo")}
-        >
-          About
-        </button>
-        <button
-          className={`${
-            current === "contactinfo"
-              ? `${urbanist700.className} about-flex-current`
-              : urbanist400.className
-          } about-flex-item`}
-          onClick={() => handleShow("contactinfo")}
-        >
-          Contact
-        </button>
-        <button
-          className={`${
-            current === "downloadinfo"
-              ? `${urbanist700.className} about-flex-current`
-              : urbanist400.className
-          } about-flex-item`}
-          onClick={() => handleShow("downloadinfo")}
-        >
-          Download CV
-        </button>
-      </div>
-    </div>
+    </Suspense>
   );
 }
 
