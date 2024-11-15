@@ -58,7 +58,11 @@ export default function Projects() {
 
           <Link href="projects/firstwebsite">
             <div className={styles.item}>
-              <div className={styles.project__noImage}></div>
+              <img
+                src="./karaoke/karaoke1.png"
+                alt="karaoke-image"
+                className={styles.project__image}
+              ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
                 Karaoke suggestions
               </div>

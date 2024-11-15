@@ -48,17 +48,12 @@ export const projectData: ProjectData = {
   },
 
   firstwebsite: {
-    images: [
-      "/remote/remote-persp-back.jpg",
-      "/remote/remote-side.jpg",
-      "/remote/remote-front.jpg",
-      "/remote/remote-corner.jpg",
-      "/remote/remote-persp-front.jpg",
-    ],
-    title: "Remote",
-    content: "Text om Remote here",
+    images: ["/karaoke/karaoke1.png", "/karaoke/karaoke1.png"],
+    title: "Karaoke suggestions",
+    content:
+      "This was my first-ever website—a karaoke suggestion tool. It wasn’t very functional, but it taught me the basics of CSS and the fundamentals of building a project from scratch.",
     color: "",
-    icons: [],
+    icons: ["Javascript", "CSS"],
     link: "https://risinger7.github.io/Karaoke-suggestions/",
     githubLink: "",
   },
@@ -74,7 +69,7 @@ export const projectData: ProjectData = {
     content:
       "For the final assignment in my industrial CAD design course, I created a cellphone model. I began with a simple foundation and gradually added complexity as I refined the design. The entire process was carried out in Autodesk Alias using surface modeling techniques. Once the model was complete, I transitioned to Autodesk VRED to create detailed renders. I'm extremely pleased with the final result—a sleek and slim-looking phone that reflects both functionality and aesthetic appeal.",
     color: "",
-    icons: [],
+    icons: ["Autodesk Alias", "VRED"],
     link: "",
     githubLink: "",
   },
@@ -87,10 +82,10 @@ export const projectData: ProjectData = {
       "/remote/remote-persp-front.jpg",
     ],
     title: "Remote",
-    content: "Text om Remote here",
-    color:
+    content:
       "One of the first CAD models I ever created was in Autodesk Alias. After mastering the basics of surface modeling, we were introduced to one of our final projects: designing a remote control. For this project, I envisioned a remote control for a smart TV. My goal was to reduce the number of buttons typically found on conventional remotes. Rather than overwhelming users with numerous options, I focused on simplifying the design by emphasizing essential functions like navigation arrows and a central home button. The final design aimed to create an intuitive and streamlined user experience, eliminating the clutter of unnecessary buttons while still offering the core functionality needed for smart TV control.",
-    icons: [],
+    color: "",
+    icons: ["Autodesk Alias", "VRED"],
     link: "",
     githubLink: "",
   },
