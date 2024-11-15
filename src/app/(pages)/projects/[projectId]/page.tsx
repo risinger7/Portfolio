@@ -10,7 +10,7 @@ type ProjectPageProps = {
 
 export default function ProjectPage({ params }: ProjectPageProps) {
   const { projectId } = params;
-  const project: any = projectData[projectId];
+  const project = projectData[projectId];
   return (
     <Project
       id={projectId}

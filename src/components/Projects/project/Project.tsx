@@ -63,9 +63,11 @@ export default function Project(props: ProjectProps) {
               Link
             </a>
           ) : null}
-          {props.icons?.map((icon: any) => {
+          {props.icons?.map((icon: string) => {
             return (
-              <div className={`${urbanist400.className} grid-icon`}>{icon}</div>
+              <div key={icon} className={`${urbanist400.className} grid-icon`}>
+                {icon}
+              </div>
             );
           })}
         </div>
