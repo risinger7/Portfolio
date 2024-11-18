@@ -5,12 +5,10 @@ import { bai400 } from "../styles/styles.fonts";
 import { useEffect, useState } from "react";
 import { TransitionLink } from "./TransitionLink";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const [isScreenLarge, setIsScreenLarge] = useState<boolean>(true);
-  const { theme } = useTheme();
 
   // media query closing burger
   useEffect(() => {
