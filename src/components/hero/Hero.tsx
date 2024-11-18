@@ -27,7 +27,7 @@ export default function Hero() {
     };
   }, []);
   // Adjust zoom based on scroll
-  const zoomFactor = 1 + scrollY / 600;
+  const zoomFactor = 1 + scrollY / 400;
 
   function handleClickContact() {
     router.push("/about?message=contactinfo");
@@ -79,8 +79,6 @@ export default function Hero() {
 
         <div className="ball"></div>
       </div>
-
-      {/* move to another comp*/}
       <div className="background-image"></div>
     </div>
   );
