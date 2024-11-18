@@ -30,13 +30,13 @@
   --oredish: #f78c6c;
   --redish: #f97583;
   --bluish: rgb(15, 102, 160);
-  --yellowish: #eebd33;
+  --yellowish: #eebe0f;
 }
 
 .dark {
   --background: rgb(16, 16, 16);
   --foreground: rgb(251, 250, 244);
-  --yellow: #eebd33;
+  --yellow: #eebe0f;
   --fade: rgb(8, 8, 8);
   --hero-background: rgba(0, 0, 0, 0.4);
   --grid-item-border: rgb(251, 250, 244);
