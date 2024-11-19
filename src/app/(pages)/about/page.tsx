@@ -3,7 +3,6 @@ import { Suspense, useEffect, useState } from "react";
 import "./about.css";
 import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
 import { useSearchParams } from "next/navigation";
-import Footer from "@/components/footer/Footer";
 import { Github, Linkedin } from "lucide-react";
 
 export default function AboutPage() {
