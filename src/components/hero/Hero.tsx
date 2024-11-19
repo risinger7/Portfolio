@@ -62,7 +62,7 @@ export default function Hero() {
           </div>
           <div className="text-container">
             <p className={`${urbanist400.className} hero-text `}>
-              Hi, I&#39;m Viktor
+              Hi, I&#39;m Viktor!
             </p>
             <p className={`${urbanist400.className} hero-text `}>
               A junior fullstack developer with a passion for design and code. I

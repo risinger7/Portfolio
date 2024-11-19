@@ -16,6 +16,10 @@ export default function ImageSlider({ images }: ImageSliderProps) {
     setImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   }
 
+  function showIndexImage(index: number) {
+    setImgIndex(index);
+  }
+
   return (
     <div className="image-container grid-item">
       <div
@@ -34,6 +38,19 @@ export default function ImageSlider({ images }: ImageSliderProps) {
         <button onClick={() => showNextImage()} className="image-button right">
           <ChevronRight className="image-animation" size={64} />
         </button>
+      </div>
+      <div className="image-dots">
+        {images.map((image, index) => {
+          return (
+            <button
+              onClick={() => showIndexImage(index)}
+              key={image}
+              className={`image-dot ${
+                index === imgIndex ? "image-dot-current" : ""
+              }`}
+            ></button>
+          );
+        })}
       </div>
     </div>
   );

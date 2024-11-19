@@ -22,7 +22,9 @@
 
 :root {
   --background: rgb(250, 248, 242);
-  --foreground: #121212;
+  /* --foreground: #121212; */
+  --darkblue: #0f1115;
+  --foreground: #0f1115;
   --yellow: #241c06;
   --turq: rgb(66, 218, 152);
   --fade: rgb(138, 138, 138);
@@ -34,7 +36,7 @@
 }
 
 .dark {
-  --background: rgb(16, 16, 16);
+  --background: var(--darkblue);
   --foreground: rgb(251, 250, 244);
   --yellow: #eebe0f;
   --fade: rgb(8, 8, 8);
@@ -78,16 +80,4 @@ html {
 body {
   opacity: 1;
   transition: all 0.8s ease-in-out;
-}
-
-@keyframes scaleRotate {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1);
-  }
 }

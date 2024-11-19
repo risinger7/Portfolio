@@ -6,7 +6,7 @@
   align-items: center;
   background: transparent;
   min-height: 80vh;
-  overflow: hidden; /* Ensure nothing overflows out */
+  overflow: hidden;
 }
 
 .background-image-container {

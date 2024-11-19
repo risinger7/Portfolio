@@ -56,7 +56,7 @@ export default function Projects() {
                 className={styles.project__image}
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Karaoke suggestions
+                Karaoke
               </div>
             </div>
           </Link>

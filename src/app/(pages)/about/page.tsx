@@ -3,6 +3,8 @@ import { Suspense, useEffect, useState } from "react";
 import "./about.css";
 import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
 import { useSearchParams } from "next/navigation";
+import Footer from "@/components/footer/Footer";
+import { Github, Linkedin } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -67,6 +69,28 @@ function AboutComponent() {
         >
           Download CV
         </button>
+      </div>
+      <div className="about-footer-icons">
+        <a
+          href="https://github.com/risinger7"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="about-footer-icon">
+            <Github size={28} />
+            <p className={`${urbanist400.className}`}>Github</p>
+          </div>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/viktor-risinger-a8a5b9233/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="about-footer-icon">
+            <Linkedin size={28} />
+            <p className={`${urbanist400.className}`}>Linkedin</p>
+          </div>
+        </a>
       </div>
     </div>
   );

@@ -59,3 +59,33 @@
     scale: 1.2;
   }
 }
+
+.image-dots {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+  height: fit-content;
+  z-index: 9000;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+}
+.image-dot {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.image-dot:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.image-dot-current {
+  background-color: rgba(0, 0, 6, 0.9);
+}
+
+@media screen and (width < 600px) {
+  .image-dots {
+    display: none;
+  }
+}
