@@ -77,8 +77,6 @@ export default function Hero() {
             Contact me
           </button>
         </div>
-
-        <div className="ball"></div>
       </div>
       <div className="background-image"></div>
     </div>

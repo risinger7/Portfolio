@@ -4,6 +4,7 @@ import "./about.css";
 import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
 import { useSearchParams } from "next/navigation";
 import { Github, Linkedin } from "lucide-react";
+import Footer from "@/components/footer/Footer";
 
 export default function AboutPage() {
   return (
@@ -15,6 +16,7 @@ export default function AboutPage() {
 
 function AboutComponent() {
   const [current, setCurrent] = useState<string | null>("aboutinfo");
+  const [confirmDownload, setConfirmDownload] = useState<boolean>(false);
   const searchParams = useSearchParams();
   const message = searchParams.get("message");
   useEffect(() => {
@@ -34,7 +36,6 @@ function AboutComponent() {
         <div className="about-content">
           {current === "aboutinfo" && <AboutInfo />}
           {current === "contactinfo" && <ContactInfo />}
-          {current === "downloadinfo" && <DownloadInfo />}
         </div>
       </div>
       <div className="about-flex-buttons">
@@ -43,7 +44,7 @@ function AboutComponent() {
             current === "aboutinfo"
               ? `${urbanist700.className} about-flex-current`
               : urbanist400.className
-          } about-flex-item`}
+          } about-flex-button`}
           onClick={() => handleShow("aboutinfo")}
         >
           About
@@ -53,7 +54,7 @@ function AboutComponent() {
             current === "contactinfo"
               ? `${urbanist700.className} about-flex-current`
               : urbanist400.className
-          } about-flex-item`}
+          } about-flex-button`}
           onClick={() => handleShow("contactinfo")}
         >
           Contact
@@ -63,34 +64,28 @@ function AboutComponent() {
             current === "downloadinfo"
               ? `${urbanist700.className} about-flex-current`
               : urbanist400.className
-          } about-flex-item`}
-          onClick={() => handleShow("downloadinfo")}
+          } ${
+            confirmDownload
+              ? `${urbanist700.className} button-confirm-download`
+              : ""
+          } about-flex-button`}
+          onClick={() => setConfirmDownload((prev) => !prev)}
         >
-          Download CV
+          {confirmDownload ? (
+            <a
+              className={` download-link`}
+              href="/cv/Viktor-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Confirm download
+            </a>
+          ) : (
+            <p>Download CV</p>
+          )}
         </button>
       </div>
-      <div className="about-footer-icons">
-        <a
-          href="https://github.com/risinger7"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="about-footer-icon">
-            <Github size={28} />
-            <p className={`${urbanist400.className}`}>Github</p>
-          </div>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/viktor-risinger-a8a5b9233/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="about-footer-icon">
-            <Linkedin size={28} />
-            <p className={`${urbanist400.className}`}>Linkedin</p>
-          </div>
-        </a>
-      </div>
+      <Footer />
     </div>
   );
 }
@@ -132,21 +127,6 @@ function ContactInfo() {
           viktor.risinger@gmail.com
         </button>
       </p>
-    </div>
-  );
-}
-
-function DownloadInfo() {
-  return (
-    <div className="downloadinfo">
-      <div className="download-cv">
-        <h1 className={`${urbanist700.className} about-header`}>Download</h1>
-        <a href="/cv/CV.pdf" target="_blank" rel="noopener noreferrer">
-          <button className={`${urbanist700.className} download-here`}>
-            Download here
-          </button>
-        </a>
-      </div>
     </div>
   );
 }

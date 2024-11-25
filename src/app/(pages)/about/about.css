@@ -9,7 +9,6 @@
 
 .about-content-container {
   width: 90%;
-  /* border: 1px solid white; */
   min-height: 200px;
   display: flex;
   flex-direction: column;
@@ -60,7 +59,7 @@
   display: flex;
   flex-wrap: wrap;
 }
-.about-flex-item {
+.about-flex-button {
   cursor: pointer;
   border-radius: 1rem;
   flex-grow: 1;
@@ -73,20 +72,21 @@
   align-items: center;
   transition: all 0.2s ease;
 }
-.about-flex-item:hover {
+.about-flex-button:hover {
   font-size: 1.1rem;
 }
 .about-flex-current {
   background-color: var(--foreground);
   color: var(--background);
 }
-
-.about-footer-icons {
-  display: flex;
-  gap: 1rem;
+.button-confirm-download {
+  background-color: var(--bluish);
 }
-.about-footer-icon {
+.download-link {
+  color: black;
   display: flex;
-  gap: 0.5rem;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }

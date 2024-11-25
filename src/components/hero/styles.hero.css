@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background: transparent;
-  min-height: 80vh;
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -42,6 +42,7 @@
 }
 
 .hero-title {
+  cursor: default;
   color: var(--foreground);
   font-size: clamp(2rem, 2rem + 5vw, 8rem);
   line-height: 0.9;
