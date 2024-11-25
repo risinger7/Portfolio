@@ -90,7 +90,6 @@ function AboutComponent() {
   );
 }
 
-/* When extra time, refactor these 3 into one component */
 function AboutInfo() {
   return (
     <div className="aboutinfo">
