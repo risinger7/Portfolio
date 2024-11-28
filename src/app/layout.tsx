@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <Head>
         <link rel="icon" href="/icon.ico" sizes="any" />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -34,7 +34,7 @@ export default function RootLayout({
             gtag('config', '${GA_ID}');
           `}
         </Script>
-      </head>
+      </Head>
       <body className={`antialiased`}>
         <Providers>{children}</Providers>
       </body>
