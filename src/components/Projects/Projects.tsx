@@ -2,13 +2,17 @@
 import Navbar from "../navbar/Navbar";
 import styles from "./projects.module.css";
 import Link from "next/link";
-import { urbanist900 } from "@/components/styles/styles.fonts";
+import { urbanist900, urbanist700 } from "@/components/styles/styles.fonts";
 
 export default function Projects() {
   return (
     <>
       <Navbar></Navbar>
       <div className={styles.container}>
+        <h1 className={`${urbanist700.className} ${styles.title}`}>
+          Programming
+        </h1>
+
         <div className={styles.grid}>
           <Link href="projects/clira">
             <div className={styles.item}>
@@ -19,6 +23,18 @@ export default function Projects() {
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
                 Clira
+              </div>
+            </div>
+          </Link>
+          <Link href="projects/event">
+            <div className={styles.item}>
+              <img
+                src="./event/event1.png"
+                alt="clira-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Event
               </div>
             </div>
           </Link>
@@ -60,7 +76,11 @@ export default function Projects() {
               </div>
             </div>
           </Link>
-
+        </div>
+        <h1 className={`${urbanist700.className} ${styles.title}`}>
+          CAD designs
+        </h1>
+        <div className={styles.grid}>
           <Link href="projects/phone">
             <div className={styles.item}>
               <img

@@ -21,6 +21,16 @@ export const projectData: ProjectData = {
     link: "https://www.clira.io/",
     githubLink: "",
   },
+  event: {
+    images: ["/event/event1.png"],
+    title: "Event",
+    content:
+      "Event is an ongoing project that I am developing together with a friend. Our goal is to create an innovative platform that reimagines how people connect and meet.",
+    color: "clira-pink",
+    icons: ["Next.js", "React", "Supabase", "Docker"],
+    link: "https://www.clira.io/",
+    githubLink: "",
+  },
   game: {
     images: [
       "/game/snappyblock1.png",
@@ -51,7 +61,7 @@ export const projectData: ProjectData = {
     images: ["/karaoke/karaoke1.png", "/karaoke/karaoke1.png"],
     title: "Karaoke suggestions",
     content:
-      "This was my first-ever website—a karaoke suggestion tool. It wasn’t very functional, but it taught me the basics of CSS and the fundamentals of building a project from scratch.",
+      "This was my first ever website - a karaoke suggestion tool. It taught me the basics of CSS and the fundamentals of building a webb-project from scratch.",
     color: "",
     icons: ["Javascript", "CSS"],
     link: "https://risinger7.github.io/Karaoke-suggestions/",

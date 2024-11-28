@@ -1,4 +1,5 @@
 .container {
+  padding-top: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,9 +7,13 @@
   margin-bottom: 4rem;
 }
 
+.title {
+  font-size: 32px;
+}
+
 /* Phone layout */
 .grid {
-  margin-top: 12rem;
+  margin-top: 6rem;
   width: 90%;
   max-width: 1000px;
   display: grid;
