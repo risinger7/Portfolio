@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import "./globals.css";
 import { Providers } from "./providers";
 import Script from "next/script";
@@ -20,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
+      <head>
         <link rel="icon" href="/icon.ico" sizes="any" />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
@@ -34,7 +33,7 @@ export default function RootLayout({
             gtag('config', '${GA_ID}');
           `}
         </Script>
-      </Head>
+      </head>
       <body className={`antialiased`}>
         <Providers>{children}</Providers>
       </body>
