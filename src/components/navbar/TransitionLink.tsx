@@ -25,7 +25,7 @@ export const TransitionLink = ({
       if (pageTransition) {
         body?.classList.remove(pageTransition);
       }
-      await sleep(4000);
+      await sleep(900);
       if (pageTransition) {
         body?.classList.remove("stop-overflow");
       }
