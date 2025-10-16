@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import "./styles.hero.css";
 import { urbanist400, urbanist700, urbanist900 } from "../styles/styles.fonts";
-import { useRouter } from "next/navigation";
 import { TransitionLink } from "../navbar/TransitionLink";
 
 export default function Hero() {
