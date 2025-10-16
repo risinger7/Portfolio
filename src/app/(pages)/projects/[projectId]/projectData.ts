@@ -11,6 +11,21 @@ type ProjectData = {
 };
 
 export const projectData: ProjectData = {
+  hel: {
+    images: [
+      "/hel/hel-och-stark1.png",
+      "/hel/hel-och-stark2.png",
+      "/hel/hel-och-stark3.png",
+    ],
+    title: "Hel & Stark",
+    content:
+      "A website for a massage therapy practice, featuring a clean, accessible design that helps clients easily find treatment information and book appointments. Built with Next.js and optimized for both user experience and local SEO.",
+    color: "clira-pink",
+    icons: ["Next.js", "SEO"],
+    link: "https://hel-och-stark.vercel.app/",
+    githubLink: "https://github.com/risinger7/hel-och-stark",
+  },
+
   clira: {
     images: ["/clira/image61.png", "/clira/clira123.jpg"],
     title: "Clira",
@@ -21,6 +36,7 @@ export const projectData: ProjectData = {
     link: "https://www.clira.io/",
     githubLink: "",
   },
+
   event: {
     images: ["/event/event1.png"],
     title: "Event",
@@ -31,6 +47,7 @@ export const projectData: ProjectData = {
     link: "https://www.clira.io/",
     githubLink: "",
   },
+
   game: {
     images: [
       "/game/snappyblock1.png",
@@ -46,6 +63,7 @@ export const projectData: ProjectData = {
     link: "",
     githubLink: "https://github.com/risinger7/Snappy-block",
   },
+
   toys: {
     images: ["/toys/toys3.png", "/toys/toys1.png", "/toys/toys4.png"],
     title: "Rejoi",
@@ -58,7 +76,7 @@ export const projectData: ProjectData = {
   },
 
   firstwebsite: {
-    images: ["/karaoke/karaoke1.png", "/karaoke/karaoke1.png"],
+    images: ["/karaoke/karaoke1.png"],
     title: "Karaoke suggestions",
     content:
       "This was my first ever website - a karaoke suggestion tool. It taught me the basics of CSS and the fundamentals of building a webb-project from scratch.",
@@ -67,6 +85,7 @@ export const projectData: ProjectData = {
     link: "https://risinger7.github.io/Karaoke-suggestions/",
     githubLink: "",
   },
+
   phone: {
     images: [
       "/phone/phone-side.jpg",
@@ -83,6 +102,7 @@ export const projectData: ProjectData = {
     link: "",
     githubLink: "",
   },
+
   remote: {
     images: [
       "/remote/remote-persp-back.jpg",

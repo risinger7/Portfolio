@@ -31,36 +31,35 @@ export default function ImageSlider({ images }: ImageSliderProps) {
         })}
       </div>
 
-      <div className="image-buttons">
-        <button onClick={() => showPrevImage()} className="image-button left">
-          <ChevronLeft className="image-animation" size={64} />
-        </button>
-        <button onClick={() => showNextImage()} className="image-button right">
-          <ChevronRight className="image-animation" size={64} />
-        </button>
-      </div>
-      <div className="image-dots">
-        {images.map((image, index) => {
-          return (
-            <button
-              onClick={() => showIndexImage(index)}
-              key={image}
-              className={`image-dot ${
-                index === imgIndex ? "image-dot-current" : ""
-              }`}
-            ></button>
-          );
-        })}
-      </div>
+      {/* arrows and dots to navigate through images */}
+      {images.length > 1 && (
+        <div className="image-buttons">
+          <button onClick={() => showPrevImage()} className="image-button left">
+            <ChevronLeft className="image-animation" size={64} />
+          </button>
+          <button
+            onClick={() => showNextImage()}
+            className="image-button right"
+          >
+            <ChevronRight className="image-animation" size={64} />
+          </button>
+        </div>
+      )}
+      {images.length > 1 && (
+        <div className="image-dots">
+          {images.map((image, index) => {
+            return (
+              <button
+                onClick={() => showIndexImage(index)}
+                key={image}
+                className={`image-dot ${
+                  index === imgIndex ? "image-dot-current" : ""
+                }`}
+              ></button>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
-}
-
-/* TODO: add navigate buttons in image. */
-{
-  /* <div>
-{images.map(() => {
-  return <button>index</button>;
-})}
-</div> */
 }

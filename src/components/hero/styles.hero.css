@@ -42,32 +42,34 @@
 }
 
 .hero-title {
+  position: relative;
   cursor: default;
   color: var(--foreground);
-  font-size: clamp(2rem, 2rem + 5vw, 8rem);
+  font-size: clamp(2rem, 2rem + 4vw, 7rem);
   line-height: 0.9;
   transition: all 1s ease;
   margin: 0;
   padding: 0;
-  position: relative;
 }
+
 .hero-title::after {
   content: attr(data-shadow);
   position: absolute;
-  color: var(--bluish);
+  color: var(--foreground);
   opacity: 0.8;
   top: 5px;
   left: 5px;
   transform: translateX(-8px) translateY(-2px) scale(1);
   font-size: inherit;
   line-height: inherit;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   margin: 0;
   padding: 0;
   z-index: -1;
 }
+
 .hero-title:hover::after {
-  text-shadow: 0 0 20px var(--bluish), 0 0 20px white, 0 0 30px var(--bluish);
+  text-shadow: -4px 2px 4px var(--bluish), 0 0px 70px var(--foreground);
 }
 
 .text-container {
@@ -77,22 +79,57 @@
   flex-direction: column;
   max-width: 600px;
 }
+
 .hero-text {
   font-size: 18px;
 }
 
-.hero-contact-button {
+.hero-button {
   margin-top: 1rem;
-  background-color: var(--bluish);
-  color: white;
-  padding-top: 0.5rem;
-  padding-inline: 1rem;
-  padding-bottom: 0.5rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
+  color: #f8f8f8; /* soft white text */
+  background: #ffffff10; /* very light translucent white */
+  padding: 0.6em 1.5em;
+  font-size: 16px;
+  border-radius: 0.5em;
+  border: 1px solid #ffffff40;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-contact-button:hover {
-  background-color: var(--oredish);
-  transform: translateX(8px) scale(1.1);
+.hero-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(100, 180, 255, 0.3) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
+.hero-button:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-button:hover {
+  border: 1px solid #68b0ff; /* blue border on hover */
+  color: #ffffff;
+  padding-right: 1.8em;
+  box-shadow: 0 0 15px rgba(100, 180, 255, 0.5),
+    0 0 30px rgba(100, 180, 255, 0.2);
+}
+
+.hero-button:active {
+  box-shadow: inset 2px 2px 6px #c5c5c5, inset -2px -2px 6px #ffffff;
+  transform: translateY(2px);
 }

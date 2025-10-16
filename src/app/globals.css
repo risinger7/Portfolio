@@ -26,12 +26,12 @@
   --darkblue: #0f1115;
   --foreground: #0f1115;
   --yellow: #241c06;
+  --bluish: rgb(15, 102, 160);
   --turq: rgb(66, 218, 152);
   --fade: rgb(138, 138, 138);
   --hero-background: rgba(250, 248, 242, 0.4);
   --oredish: #f78c6c;
   --redish: #f97583;
-  --bluish: rgb(15, 102, 160);
   --yellowish: #eebe0f;
 }
 
@@ -71,9 +71,9 @@ html {
 }
 
 .projects-transition {
+  overflow: hidden;
   opacity: 0;
   filter: blur(4px);
-  overflow: hidden;
   transform: translateY(-400px);
 }
 

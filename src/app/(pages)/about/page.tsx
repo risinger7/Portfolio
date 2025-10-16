@@ -1,130 +1,92 @@
 "use client";
-import { Suspense, useEffect, useState } from "react";
-import "./about.css";
-import { urbanist700, urbanist400 } from "@/components/styles/styles.fonts";
-import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 import Footer from "@/components/footer/Footer";
+import { urbanist400, urbanist700 } from "@/components/styles/styles.fonts";
+import "./about.css";
 
 export default function AboutPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <AboutComponent />
-    </Suspense>
-  );
-}
+  const [clipboardMessage, setClipboardMessage] = useState("");
 
-function AboutComponent() {
-  const [current, setCurrent] = useState<string | null>("aboutinfo");
-  const [confirmDownload, setConfirmDownload] = useState<boolean>(false);
-  const searchParams = useSearchParams();
-  const message = searchParams.get("message");
-  useEffect(() => {
-    if (message) {
-      setCurrent(message);
-    }
-  }, []);
-
-  const handleShow = (feature: string) => {
-    setCurrent(() => null);
-    setTimeout(() => setCurrent(feature), 100);
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText("viktor.risinger@gmail.com");
+    setClipboardMessage("Copied to clipboard!");
+    setTimeout(() => setClipboardMessage(""), 2000);
   };
 
   return (
     <div className="about-container">
-      <div className={`about-content-container ${current}`}>
-        <div className="about-content">
-          {current === "aboutinfo" && <AboutInfo />}
-          {current === "contactinfo" && <ContactInfo />}
-        </div>
-      </div>
-      <div className="about-flex-buttons">
-        <button
-          className={`${
-            current === "aboutinfo"
-              ? `${urbanist700.className} about-flex-current`
-              : urbanist400.className
-          } about-flex-button`}
-          onClick={() => handleShow("aboutinfo")}
-        >
-          About
-        </button>
-        <button
-          className={`${
-            current === "contactinfo"
-              ? `${urbanist700.className} about-flex-current`
-              : urbanist400.className
-          } about-flex-button`}
-          onClick={() => handleShow("contactinfo")}
-        >
-          Contact
-        </button>
-        <button
-          className={`${
-            current === "downloadinfo"
-              ? `${urbanist700.className} about-flex-current`
-              : urbanist400.className
-          } ${
-            confirmDownload
-              ? `${urbanist700.className} button-confirm-download`
-              : ""
-          } about-flex-button`}
-          onClick={() => setConfirmDownload((prev) => !prev)}
-        >
-          {confirmDownload ? (
-            <a
-              className={` download-link`}
-              href="/cv/Viktor-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Confirm download
-            </a>
-          ) : (
-            <p>Download CV</p>
-          )}
-        </button>
+      <div className="about-content-container">
+        <AboutContent />
+
+        <ContactContent
+          copyEmail={handleCopyEmail}
+          clipboardMessage={clipboardMessage}
+        />
+        <DownloadButton />
       </div>
       <Footer />
     </div>
   );
 }
 
-function AboutInfo() {
+function DownloadButton() {
   return (
-    <div className="aboutinfo">
-      <h1 className={`${urbanist700.className} about-header`}>About</h1>
-      <p className={urbanist400.className}>
-        My name is Viktor and welcome to my portfolio. I am a junior fullstack
-        developer who is curious and eager to learn. This portfolio was created
-        using React with Next js.
-      </p>
-      <p className={urbanist400.className}>
-        Click the buttons down below in order to contact me or download my
-        resume.
-      </p>
+    <a
+      className={`${urbanist700.className} about-title download-button about-item`}
+      href="/cv/viktor-cv.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Download CV
+    </a>
+  );
+}
+
+function AboutContent() {
+  return (
+    <div className="about-content about-item">
+      <h1 className={`${urbanist700.className} about-title`}>About</h1>
+      <div className={`${urbanist400.className} about-flex-text`}>
+        <p>
+          Hi! I'm Viktor, a fullstack developer with over 2 years of experience
+          building web and mobile applications using React, Next.js, and React
+          Native. I specialize in creating intuitive user interfaces and
+          seamless user experiences. I'm passionate about the intersection of
+          design and development.
+        </p>
+        <p className="about-text-margin-top">
+          Currently, I'm focused on expanding my skills in database design and
+          relational modeling.
+        </p>
+      </div>
     </div>
   );
 }
 
-function ContactInfo() {
-  function copyToClipboard() {
-    navigator.clipboard.writeText("viktor.risinger@gmail.com");
-    alert("Copied " + "viktor.risinger@gmail.com" + " to the clipboard.");
-  }
+function ContactContent({
+  copyEmail,
+  clipboardMessage,
+}: {
+  copyEmail: () => void;
+  clipboardMessage: string;
+}) {
   return (
-    <div className="contactinfo">
-      <h1 className={`${urbanist700.className} about-header`}>Contact</h1>
-      <p className={urbanist400.className}>Click to copy to clipboard.</p>
-      <p className={urbanist400.className}>Reach me via email at:</p>
-      <p className={urbanist700.className}>
+    <div className="contact-content about-item">
+      <h1 className={`${urbanist700.className} about-title`}>Contact</h1>
+      <p className={urbanist400.className}>Click to copy my email:</p>
+      <div className="email-container">
         <button
-          id="emailButton"
-          className="email-button"
-          onClick={copyToClipboard}
+          className={`${urbanist400.className} email-button`}
+          onClick={copyEmail}
         >
           viktor.risinger@gmail.com
         </button>
-      </p>
+        {clipboardMessage && (
+          <span className={`${urbanist700.className} copy-feedback`}>
+            {clipboardMessage}
+          </span>
+        )}
+      </div>
     </div>
   );
 }

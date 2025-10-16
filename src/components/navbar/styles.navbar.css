@@ -29,12 +29,12 @@
 
 .navbar-item {
   color: var(--foreground);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .navbar-item:hover {
   color: var(--oredish);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .current-item {

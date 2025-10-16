@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar";
 import styles from "./projects.module.css";
 import Link from "next/link";
 import { urbanist900, urbanist700 } from "@/components/styles/styles.fonts";
+import { TransitionLink } from "../navbar/TransitionLink";
 
 export default function Projects() {
   return (
@@ -14,6 +15,18 @@ export default function Projects() {
         </h1>
 
         <div className={styles.grid}>
+          <TransitionLink href="projects/hel" pageTransition="home-transition">
+            <div className={styles.item}>
+              <img
+                src="./hel/hel-och-stark1.png"
+                alt="clira-image"
+                className={styles.project__image}
+              ></img>
+              <div className={`${styles.overlayText} ${urbanist900.className}`}>
+                Clira
+              </div>
+            </div>
+          </TransitionLink>
           <Link href="projects/clira">
             <div className={styles.item}>
               <img
