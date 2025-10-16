@@ -1,3 +1,3 @@
 # Todos
 
-1. Optimize images with next/image.
+1. Optimize images with next/image..
