@@ -2,16 +2,18 @@
 import { useEffect, useState } from "react";
 import "./styles.hero.css";
 import { urbanist400, urbanist700, urbanist900 } from "../styles/styles.fonts";
-import { useRouter } from "next/navigation";
 import { TransitionLink } from "../navbar/TransitionLink";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+
+    setIsLoaded(true);
 
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -58,7 +60,11 @@ export default function Hero() {
             </p>
           </div>
           <TransitionLink href="about" pageTransition="about-transition">
-            <button className={`${urbanist700.className} hero-button`}>
+            <button
+              className={`${urbanist700.className} hero-button ${
+                isLoaded ? "button-slide-in" : ""
+              }`}
+            >
               Contact me
             </button>
           </TransitionLink>

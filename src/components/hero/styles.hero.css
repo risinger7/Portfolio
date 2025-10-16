@@ -132,3 +132,34 @@
   box-shadow: inset 2px 2px 6px #c5c5c5, inset -2px -2px 6px #ffffff;
   transform: translateY(2px);
 }
+
+/* animations  */
+.hero-content {
+  overflow: hidden;
+}
+
+.hero-button {
+  transform: translateX(800px);
+}
+
+.button-slide-in {
+  animation: slideInBounce 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(calc(100% + 50px));
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
