@@ -3,121 +3,167 @@ import Navbar from "../navbar/Navbar";
 import styles from "./projects.module.css";
 import { urbanist900, urbanist700 } from "@/components/styles/styles.fonts";
 import { TransitionLink } from "../navbar/TransitionLink";
+import { useEffect, useRef } from "react";
+
+const programmingProjects = [
+  {
+    href: "projects/hel",
+    image: "./hel/hel-och-stark1.png",
+    alt: "hel-image",
+    title: "Hel & Stark",
+  },
+  {
+    href: "projects/clira",
+    image: "./clira/clira123.jpg",
+    alt: "clira-image",
+    title: "Clira",
+  },
+  {
+    href: "projects/event",
+    image: "./event/event1.png",
+    alt: "event-image",
+    title: "Event",
+  },
+  {
+    href: "projects/game",
+    image: "./game/snappyblock1.png",
+    alt: "game-image",
+    title: "Snappy-block",
+  },
+  {
+    href: "projects/toys",
+    image: "./toys/toys2.png",
+    alt: "toys-image",
+    title: "ReJoi",
+  },
+  {
+    href: "projects/firstwebsite",
+    image: "./karaoke/karaoke1.png",
+    alt: "karaoke-image",
+    title: "Karaoke",
+  },
+];
+
+const cadProjects = [
+  {
+    href: "projects/phone",
+    image: "./phone/phone-persp.jpg",
+    alt: "phone-image",
+    title: "Phone design",
+  },
+  {
+    href: "projects/remote",
+    image: "./remote/remote-persp-back.jpg",
+    alt: "remote-image",
+    title: "Remote design",
+  },
+];
 
 export default function Projects() {
   const transition = "project-zoom-in";
+  const cadTitleRef = useRef<HTMLHeadingElement>(null);
+  const programmingGridRef = useRef<HTMLDivElement>(null);
+  const cadGridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const grid = entry.target as HTMLElement;
+            const items = grid.querySelectorAll(`.${styles.item}`);
+
+            items.forEach((item, i) => {
+              (item as HTMLElement).style.animationDelay = `${i * 0.2}s`;
+              item.classList.add(styles.fadeInUp);
+            });
+
+            observer.unobserve(grid);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const titleObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.fadeIn);
+          }
+        });
+      },
+      { threshold: 0.8 }
+    );
+
+    if (programmingGridRef.current)
+      observer.observe(programmingGridRef.current);
+    if (cadGridRef.current) observer.observe(cadGridRef.current);
+    if (cadTitleRef.current) titleObserver.observe(cadTitleRef.current);
+
+    return () => {
+      observer.disconnect();
+      titleObserver.disconnect();
+    };
+  }, []);
+
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <div className={styles.container}>
         <h1 className={`${urbanist700.className} ${styles.title}`}>
           Programming
         </h1>
-        <div className={styles.grid}>
-          <TransitionLink href="projects/hel" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./hel/hel-och-stark1.png"
-                alt="clira-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Hel & Stark
+        <div ref={programmingGridRef} className={styles.grid}>
+          {programmingProjects.map((project) => (
+            <TransitionLink
+              key={project.href}
+              href={project.href}
+              pageTransition={transition}
+            >
+              <div className={styles.item}>
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className={styles.project__image}
+                />
+                <div
+                  className={`${styles.overlayText} ${urbanist900.className}`}
+                >
+                  {project.title}
+                </div>
               </div>
-            </div>
-          </TransitionLink>
-          <TransitionLink href="projects/clira" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./clira/clira123.jpg"
-                alt="clira-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Clira
-              </div>
-            </div>
-          </TransitionLink>
-          <TransitionLink href="projects/event" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./event/event1.png"
-                alt="clira-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Event
-              </div>
-            </div>
-          </TransitionLink>
-          <TransitionLink href="projects/game" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./game/snappyblock1.png"
-                alt="clira-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Snappy-block
-              </div>
-            </div>
-          </TransitionLink>
-          <TransitionLink href="projects/toys" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./toys/toys2.png"
-                alt="event-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                ReJoi
-              </div>
-            </div>
-          </TransitionLink>
-          <TransitionLink
-            href="projects/firstwebsite"
-            pageTransition={transition}
-          >
-            <div className={styles.item}>
-              <img
-                src="./karaoke/karaoke1.png"
-                alt="karaoke-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Karaoke
-              </div>
-            </div>
-          </TransitionLink>
+            </TransitionLink>
+          ))}
         </div>
-        <h1 className={`${urbanist700.className} ${styles.title}`}>
+
+        <h1
+          ref={cadTitleRef}
+          className={`${urbanist700.className} ${styles.cadTitle}`}
+        >
           CAD designs
         </h1>
-        <div className={styles.grid}>
-          <TransitionLink href="projects/phone" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./phone/phone-persp.jpg"
-                alt="phone-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Phone design
+        <div ref={cadGridRef} className={styles.grid}>
+          {cadProjects.map((project) => (
+            <TransitionLink
+              key={project.href}
+              href={project.href}
+              pageTransition={transition}
+            >
+              <div className={styles.item}>
+                <img
+                  src={project.image}
+                  alt={project.alt}
+                  className={styles.project__image}
+                />
+                <div
+                  className={`${styles.overlayText} ${urbanist900.className}`}
+                >
+                  {project.title}
+                </div>
               </div>
-            </div>
-          </TransitionLink>
-          <TransitionLink href="projects/remote" pageTransition={transition}>
-            <div className={styles.item}>
-              <img
-                src="./remote/remote-persp-back.jpg"
-                alt="remote-image"
-                className={styles.project__image}
-              ></img>
-              <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Remote design
-              </div>
-            </div>
-          </TransitionLink>
+            </TransitionLink>
+          ))}
         </div>
       </div>
     </>
