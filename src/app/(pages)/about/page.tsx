@@ -48,15 +48,15 @@ function AboutContent() {
       <h1 className={`${urbanist700.className} about-title`}>About</h1>
       <div className={`${urbanist400.className} about-flex-text`}>
         <p>
-          Hi! I'm Viktor, a fullstack developer with over 2 years of experience
-          building web and mobile applications using React, Next.js, and React
-          Native. I specialize in creating intuitive user interfaces and
-          seamless user experiences. I'm passionate about the intersection of
-          design and development.
+          Hi! I&apos;m Viktor, a fullstack developer with over 2 years of
+          experience building web and mobile applications using React, Next.js,
+          and React Native. I specialize in creating intuitive user interfaces
+          and seamless user experiences. I&apos;m passionate about the
+          intersection of design and development.
         </p>
         <p className="about-text-margin-top">
-          Currently, I'm focused on expanding my skills in database design and
-          relational modeling.
+          Currently, I&apos;m focused on expanding my skills in database design
+          and relational modeling.
         </p>
       </div>
     </div>
