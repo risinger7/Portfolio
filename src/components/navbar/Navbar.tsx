@@ -9,8 +9,9 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const [isScreenLarge, setIsScreenLarge] = useState<boolean>(true);
+  const pathname = usePathname();
 
-  // media query closing burger
+  // media query closing burger automaticaly
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 600px)");
     // Function to update state when the screen size changes
@@ -33,7 +34,6 @@ export default function Navbar() {
       mediaQuery.removeEventListener("change", handleResize);
     };
   }, []);
-  const pathname = usePathname();
 
   return (
     <div className="navbar-container">

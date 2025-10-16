@@ -22,20 +22,21 @@
 
 :root {
   --background: rgb(250, 248, 242);
-  /* --foreground: #121212; */
-  --darkblue: #0f1115;
   --foreground: #0f1115;
-  --yellow: #241c06;
+  --darkblue: #0f1115;
   --bluish: rgb(15, 102, 160);
-  --turq: rgb(66, 218, 152);
   --fade: rgb(138, 138, 138);
   --hero-background: rgba(250, 248, 242, 0.4);
   --oredish: #f78c6c;
   --redish: #f97583;
   --yellowish: #eebe0f;
+  --hero-button-border: #0f11156b;
+  --hero-button-text: #0f1115d1;
 }
 
 .dark {
+  --hero-button-text: #fff;
+  --hero-button-border: #ffffff40;
   --background: var(--darkblue);
   --foreground: rgb(251, 250, 244);
   --yellow: #eebe0f;
@@ -50,31 +51,45 @@ html {
   background: var(--background);
 }
 
+/* page-transitions on the body element */
+
 .stop-overflow {
   overflow: hidden;
 }
-
-/* page-transition on the body element */
 
 .home-transition {
   overflow: hidden;
   opacity: 0;
   filter: blur(3px);
-  transform: scale(1.2);
+  transform: scale(0.9);
 }
 
 .about-transition {
   overflow: hidden;
-  transform: translateX(-200px);
+  transform: translateX(-100px);
   opacity: 0;
-  filter: blur(4px);
+  filter: blur(3px);
 }
 
 .projects-transition {
   overflow: hidden;
   opacity: 0;
+  filter: blur(3px);
+  transform: translateY(-200px);
+}
+
+/* NEW: Project zoom transitions */
+.project-zoom-in {
+  overflow: hidden;
+  filter: blur(6px);
+  opacity: 0;
+  transform: scale(1.3);
+}
+
+.project-zoom-out {
+  opacity: 0;
+  transform: scale(0.8);
   filter: blur(4px);
-  transform: translateY(-400px);
 }
 
 body {

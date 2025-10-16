@@ -1,11 +1,11 @@
 "use client";
 import Navbar from "../navbar/Navbar";
 import styles from "./projects.module.css";
-import Link from "next/link";
 import { urbanist900, urbanist700 } from "@/components/styles/styles.fonts";
 import { TransitionLink } from "../navbar/TransitionLink";
 
 export default function Projects() {
+  const transition = "project-zoom-in";
   return (
     <>
       <Navbar></Navbar>
@@ -13,9 +13,8 @@ export default function Projects() {
         <h1 className={`${urbanist700.className} ${styles.title}`}>
           Programming
         </h1>
-
         <div className={styles.grid}>
-          <TransitionLink href="projects/hel" pageTransition="home-transition">
+          <TransitionLink href="projects/hel" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./hel/hel-och-stark1.png"
@@ -23,11 +22,11 @@ export default function Projects() {
                 className={styles.project__image}
               ></img>
               <div className={`${styles.overlayText} ${urbanist900.className}`}>
-                Clira
+                Hel & Stark
               </div>
             </div>
           </TransitionLink>
-          <Link href="projects/clira">
+          <TransitionLink href="projects/clira" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./clira/clira123.jpg"
@@ -38,8 +37,8 @@ export default function Projects() {
                 Clira
               </div>
             </div>
-          </Link>
-          <Link href="projects/event">
+          </TransitionLink>
+          <TransitionLink href="projects/event" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./event/event1.png"
@@ -50,9 +49,8 @@ export default function Projects() {
                 Event
               </div>
             </div>
-          </Link>
-
-          <Link href="projects/game">
+          </TransitionLink>
+          <TransitionLink href="projects/game" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./game/snappyblock1.png"
@@ -63,8 +61,8 @@ export default function Projects() {
                 Snappy-block
               </div>
             </div>
-          </Link>
-          <Link href="projects/toys">
+          </TransitionLink>
+          <TransitionLink href="projects/toys" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./toys/toys2.png"
@@ -75,9 +73,11 @@ export default function Projects() {
                 ReJoi
               </div>
             </div>
-          </Link>
-
-          <Link href="projects/firstwebsite">
+          </TransitionLink>
+          <TransitionLink
+            href="projects/firstwebsite"
+            pageTransition={transition}
+          >
             <div className={styles.item}>
               <img
                 src="./karaoke/karaoke1.png"
@@ -88,13 +88,13 @@ export default function Projects() {
                 Karaoke
               </div>
             </div>
-          </Link>
+          </TransitionLink>
         </div>
         <h1 className={`${urbanist700.className} ${styles.title}`}>
           CAD designs
         </h1>
         <div className={styles.grid}>
-          <Link href="projects/phone">
+          <TransitionLink href="projects/phone" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./phone/phone-persp.jpg"
@@ -105,8 +105,8 @@ export default function Projects() {
                 Phone design
               </div>
             </div>
-          </Link>
-          <Link href="projects/remote">
+          </TransitionLink>
+          <TransitionLink href="projects/remote" pageTransition={transition}>
             <div className={styles.item}>
               <img
                 src="./remote/remote-persp-back.jpg"
@@ -117,7 +117,7 @@ export default function Projects() {
                 Remote design
               </div>
             </div>
-          </Link>
+          </TransitionLink>
         </div>
       </div>
     </>

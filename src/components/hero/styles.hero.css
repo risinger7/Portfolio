@@ -86,12 +86,12 @@
 
 .hero-button {
   margin-top: 1rem;
-  color: #f8f8f8; /* soft white text */
-  background: #ffffff10; /* very light translucent white */
+  color: var(--hero-button-text);
+  border: 1px solid var(--hero-button-border);
+  background: #ffffff10;
   padding: 0.6em 1.5em;
   font-size: 16px;
   border-radius: 0.5em;
-  border: 1px solid #ffffff40;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -108,7 +108,7 @@
   background: radial-gradient(
     circle,
     rgba(100, 180, 255, 0.3) 0%,
-    transparent 60%
+    transparent 50%
   );
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -118,12 +118,11 @@
 
 .hero-button:hover::before {
   opacity: 1;
-  transform: scale(1);
 }
 
 .hero-button:hover {
   border: 1px solid #68b0ff; /* blue border on hover */
-  color: #ffffff;
+  color: var(--foreground);
   padding-right: 1.8em;
   box-shadow: 0 0 15px rgba(100, 180, 255, 0.5),
     0 0 30px rgba(100, 180, 255, 0.2);
