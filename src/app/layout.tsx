@@ -5,8 +5,8 @@ import Script from "next/script";
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
-  title: "Viktor Portfolio",
-  description: "Created with Next.js",
+  title: "Risinger Portfolio",
+  description: "Fullstack developer",
   icons: {
     icon: "/icon.ico",
   },
