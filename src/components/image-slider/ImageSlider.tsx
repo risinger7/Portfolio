@@ -35,13 +35,13 @@ export default function ImageSlider({ images }: ImageSliderProps) {
       {images.length > 1 && (
         <div className="image-buttons">
           <button onClick={() => showPrevImage()} className="image-button left">
-            <ChevronLeft className="image-animation" size={64} />
+            <ChevronLeft className="hover-animation" size={64} />
           </button>
           <button
             onClick={() => showNextImage()}
             className="image-button right"
           >
-            <ChevronRight className="image-animation" size={64} />
+            <ChevronRight className="hover-animation" size={64} />
           </button>
         </div>
       )}

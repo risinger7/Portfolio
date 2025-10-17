@@ -17,14 +17,15 @@
   max-width: 800px;
 }
 
-.grid-button {
-  margin-top: 6rem;
+.goback-button {
+  margin-top: 5rem;
+  margin-left: 1rem;
   padding: 0.5rem;
   transition: all 0.5s ease-in-out;
   position: relative;
 }
 
-.grid-button::after {
+.goback-button::after {
   content: "";
   top: 50%;
   left: 50%;
@@ -40,7 +41,7 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.grid-button:hover::after {
+.goback-button:hover::after {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }

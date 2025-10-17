@@ -33,8 +33,8 @@ export default function Project(props: ProjectProps) {
           props.color ? props.color : ""
         }`}
       >
-        <div className="absolute flex justify-center m-12">
-          <button className={"grid-button"} onClick={() => handleGoBack()}>
+        <div className="absolute flex justify-center">
+          <button className="goback-button" onClick={() => handleGoBack()}>
             <ChevronLeft size={38} />
           </button>
         </div>
@@ -49,7 +49,7 @@ export default function Project(props: ProjectProps) {
           </p>
           <ImageSlider images={props.images} />
           <div className="grid-icons grid-item">
-            {props.githubLink ? (
+            {props.githubLink && (
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -58,7 +58,8 @@ export default function Project(props: ProjectProps) {
               >
                 Github
               </a>
-            ) : props.link ? (
+            )}
+            {props.link && (
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,7 +68,7 @@ export default function Project(props: ProjectProps) {
               >
                 Link
               </a>
-            ) : null}
+            )}
             {props.icons?.map((icon: string) => {
               return (
                 <div

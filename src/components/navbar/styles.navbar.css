@@ -81,19 +81,30 @@
   .burger {
     display: flex;
     flex-direction: column;
+    z-index: 950; /* Make sure burger button is always clickable */
   }
-
   .navbar {
     padding: 2rem;
-    top: 0;
+    top: 4rem;
     right: 0;
     min-height: 100vh;
-    top: 4rem;
     min-width: 50%;
     flex-direction: column;
     position: fixed;
     display: flex;
     background-color: var(--background);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Hide the menu off-screen when closed */
+  .navbar.hidden {
+    transform: translateX(100%); /* Slide off to the right */
+    pointer-events: none; /* Disable all interactions */
+  }
+
+  .navbar.visible {
+    transform: translateX(0); /* Slide in from the right */
+    pointer-events: auto;
   }
 
   .navbar-container {

@@ -13,7 +13,7 @@ export default function Navbar() {
 
   // media query closing burger automaticaly
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(min-width: 600px)");
+    const mediaQuery = window.matchMedia("(min-width: 601px)");
     // Function to update state when the screen size changes
     const handleResize = (e: MediaQueryListEvent) => {
       if (e.matches) {
