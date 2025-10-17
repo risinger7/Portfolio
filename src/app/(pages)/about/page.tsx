@@ -1,11 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "@/components/footer/Footer";
 import { urbanist400, urbanist700 } from "@/components/styles/styles.fonts";
 import "./about.css";
+import { sleep } from "@/utils/sleep";
 
 export default function AboutPage() {
-  const [clipboardMessage, setClipboardMessage] = useState("");
+  const [clipboardMessage, setClipboardMessage] = useState<string>("");
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("viktor.risinger@gmail.com");
@@ -15,9 +21,8 @@ export default function AboutPage() {
 
   return (
     <div className="about-container">
-      <div className="about-content-container">
+      <div className={`about-content-container ${isLoaded ? "loaded" : ""}`}>
         <AboutContent />
-
         <ContactContent
           copyEmail={handleCopyEmail}
           clipboardMessage={clipboardMessage}
