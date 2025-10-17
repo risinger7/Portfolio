@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Footer from "@/components/footer/Footer";
 import { urbanist400, urbanist700 } from "@/components/styles/styles.fonts";
 import "./about.css";
-import { sleep } from "@/utils/sleep";
 
 export default function AboutPage() {
   const [clipboardMessage, setClipboardMessage] = useState<string>("");
