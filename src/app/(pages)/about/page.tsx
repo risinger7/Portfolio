@@ -53,10 +53,15 @@ function AboutContent() {
       <div className={`${urbanist400.className} about-flex-text`}>
         <p>
           Hi! I&apos;m Viktor, a fullstack developer with over 2 years of
-          experience building web and mobile applications using React, Next.js,
-          and React Native. I specialize in creating intuitive user interfaces
-          and seamless user experiences. I&apos;m passionate about the
-          intersection of design and development.
+          experience building web and mobile applications. My main focus is on
+          React, Next.js, and React Native, where I specialize in crafting
+          intuitive user interfaces and seamless user experiences. While my
+          expertise lies in the React ecosystem, I also have a solid
+          understanding of the broader web development stack, allowing me to
+          build end-to-end solutions that are both performant and visually
+          engaging. I&apos;m passionate about the intersection of design and
+          development and love bringing ideas to life through clean, thoughtful
+          code.
         </p>
         <p className="about-text-margin-top">
           Currently, I&apos;m focused on expanding my skills in database design

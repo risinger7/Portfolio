@@ -5,23 +5,11 @@ import { urbanist400, urbanist700, urbanist900 } from "../styles/styles.fonts";
 import { TransitionLink } from "../navbar/TransitionLink";
 
 export default function Hero() {
-  const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
     setIsLoaded(true);
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
-  // Adjust zoom based on scroll
-  const zoomFactor = 1 + scrollY / 400;
 
   return (
     <div>
@@ -31,7 +19,6 @@ export default function Hero() {
             className="background-image"
             src="/phone/phone-zoom.jpg"
             alt="Hero Background"
-            style={{ transform: `scale(${zoomFactor})` }}
           />
         </div>
         <div className="hero-content ">
