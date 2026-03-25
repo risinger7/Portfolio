@@ -11,6 +11,31 @@ type ProjectData = {
 };
 
 export const projectData: ProjectData = {
+    knowtes: {
+        images: [
+            "/knowtes/knowtes1.png",
+            "/knowtes/knowtes2.png",
+            "/knowtes/knowtes3.png",
+            "/knowtes/knowtes4.png",
+        ],
+        title: "Knowtes",
+        content: `A micro-learning platform designed to make learning fast and frictionless.
+        Instead of long articles or full courses, Knowtes delivers short, self-contained
+        explanations of single concepts, each readable in under five minutes, with no assumed
+        knowledge or unnecessary filler.
+
+        Users explore a curated feed of topics, mark what they’ve read, and build a personal
+        knowledge network that visualizes how concepts connect over time. The result is a
+        growing, interactive map of what you’ve actually learned.
+
+        Built with Next.js, React, TypeScript, and Supabase, the platform focuses on simplicity,
+        clarity, and high-quality content, solving the problem of overwhelming information by
+        making learning quick, structured, and tangible.`,
+        color: "clira-pink",
+        icons: ["Next.js", "Supabase", "Vercel"],
+        link: "https://knowtes-orpin.vercel.app",
+        githubLink: "https://github.com/risinger7",
+    },
     hel: {
         images: [
             "/hel/hel-och-stark1.png",
