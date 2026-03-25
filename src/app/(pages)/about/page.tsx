@@ -5,12 +5,7 @@ import { urbanist400, urbanist700 } from "@/components/styles/styles.fonts";
 import "./about.css";
 
 export default function AboutPage() {
-    const [clipboardMessage, setClipboardMessage] = useState<string>("");
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        setIsLoaded(true);
-    }, []);
+    const [clipboardMessage, setClipboardMessage] = useState("");
 
     const handleCopyEmail = () => {
         navigator.clipboard.writeText("viktor.risinger@gmail.com");
@@ -20,12 +15,9 @@ export default function AboutPage() {
 
     return (
         <div className="about-container">
-            <div
-                className={`about-content-container ${
-                    isLoaded ? "loaded" : ""
-                }`}
-            >
+            <div className="about-content-container">
                 <AboutContent />
+
                 <ContactContent
                     copyEmail={handleCopyEmail}
                     clipboardMessage={clipboardMessage}
@@ -41,7 +33,7 @@ function DownloadButton() {
     return (
         <a
             className={`${urbanist700.className} about-title download-button about-item`}
-            href="/cv/viktor-cv.pdf"
+            href="/cv/CV-Viktor-Risinger.pdf"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -56,21 +48,15 @@ function AboutContent() {
             <h1 className={`${urbanist700.className} about-title`}>About</h1>
             <div className={`${urbanist400.className} about-flex-text`}>
                 <p>
-                    Hi! I&apos;m Viktor, a fullstack developer with 2 years of
-                    experience building web and mobile applications. My main
-                    focus is on React, Next.js, and React Native, where I
-                    specialize in crafting intuitive user interfaces and
-                    seamless user experiences. While my expertise lies in the
-                    React ecosystem, I also have a solid understanding of the
-                    broader web development stack, allowing me to build
-                    end-to-end solutions that are both performant and visually
-                    engaging. I&apos;m passionate about the intersection of
-                    design and development and love bringing ideas to life
-                    through clean, thoughtful code.
+                    Hi! I'm Viktor, a fullstack developer with over 2 years of
+                    experience building web and mobile applications using React,
+                    Next.js, and React Native. I specialize in creating
+                    intuitive user interfaces and seamless user experiences. I'm
+                    passionate about the intersection of design and development.
                 </p>
                 <p className="about-text-margin-top">
-                    Currently, I&apos;m focused on expanding my skills in
-                    database design and relational modeling.
+                    Currently, I'm focused on expanding my skills in database
+                    design and relational modeling.
                 </p>
             </div>
         </div>
