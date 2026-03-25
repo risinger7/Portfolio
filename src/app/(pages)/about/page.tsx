@@ -5,88 +5,88 @@ import { urbanist400, urbanist700 } from "@/components/styles/styles.fonts";
 import "./about.css";
 
 export default function AboutPage() {
-  const [clipboardMessage, setClipboardMessage] = useState("");
+    const [clipboardMessage, setClipboardMessage] = useState("");
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("viktor.risinger@gmail.com");
-    setClipboardMessage("Copied to clipboard!");
-    setTimeout(() => setClipboardMessage(""), 2000);
-  };
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("viktor.risinger@gmail.com");
+        setClipboardMessage("Copied to clipboard!");
+        setTimeout(() => setClipboardMessage(""), 2000);
+    };
 
-  return (
-    <div className="about-container">
-      <div className="about-content-container">
-        <AboutContent />
+    return (
+        <div className="about-container">
+            <div className="about-content-container">
+                <AboutContent />
 
-        <ContactContent
-          copyEmail={handleCopyEmail}
-          clipboardMessage={clipboardMessage}
-        />
-        <DownloadButton />
-      </div>
-      <Footer />
-    </div>
-  );
+                <ContactContent
+                    copyEmail={handleCopyEmail}
+                    clipboardMessage={clipboardMessage}
+                />
+                <DownloadButton />
+            </div>
+            <Footer />
+        </div>
+    );
 }
 
 function DownloadButton() {
-  return (
-    <a
-      className={`${urbanist700.className} about-title download-button about-item`}
-      href="/cv/viktor-cv.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Download CV
-    </a>
-  );
+    return (
+        <a
+            className={`${urbanist700.className} about-title download-button about-item`}
+            href="/cv/CV-Viktor-Risinger.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Download CV
+        </a>
+    );
 }
 
 function AboutContent() {
-  return (
-    <div className="about-content about-item">
-      <h1 className={`${urbanist700.className} about-title`}>About</h1>
-      <div className={`${urbanist400.className} about-flex-text`}>
-        <p>
-          Hi! I'm Viktor, a fullstack developer with over 2 years of experience
-          building web and mobile applications using React, Next.js, and React
-          Native. I specialize in creating intuitive user interfaces and
-          seamless user experiences. I'm passionate about the intersection of
-          design and development.
-        </p>
-        <p className="about-text-margin-top">
-          Currently, I'm focused on expanding my skills in database design and
-          relational modeling.
-        </p>
-      </div>
-    </div>
-  );
+    return (
+        <div className="about-content about-item">
+            <h1 className={`${urbanist700.className} about-title`}>About</h1>
+            <div className={`${urbanist400.className} about-flex-text`}>
+                <p>
+                    Hi! I'm Viktor, a fullstack developer with over 2 years of
+                    experience building web and mobile applications using React,
+                    Next.js, and React Native. I specialize in creating
+                    intuitive user interfaces and seamless user experiences. I'm
+                    passionate about the intersection of design and development.
+                </p>
+                <p className="about-text-margin-top">
+                    Currently, I'm focused on expanding my skills in database
+                    design and relational modeling.
+                </p>
+            </div>
+        </div>
+    );
 }
 
 function ContactContent({
-  copyEmail,
-  clipboardMessage,
+    copyEmail,
+    clipboardMessage,
 }: {
-  copyEmail: () => void;
-  clipboardMessage: string;
+    copyEmail: () => void;
+    clipboardMessage: string;
 }) {
-  return (
-    <div className="contact-content about-item">
-      <h1 className={`${urbanist700.className} about-title`}>Contact</h1>
-      <p className={urbanist400.className}>Click to copy my email:</p>
-      <div className="email-container">
-        <button
-          className={`${urbanist400.className} email-button`}
-          onClick={copyEmail}
-        >
-          viktor.risinger@gmail.com
-        </button>
-        {clipboardMessage && (
-          <span className={`${urbanist700.className} copy-feedback`}>
-            {clipboardMessage}
-          </span>
-        )}
-      </div>
-    </div>
-  );
+    return (
+        <div className="contact-content about-item">
+            <h1 className={`${urbanist700.className} about-title`}>Contact</h1>
+            <p className={urbanist400.className}>Click to copy my email:</p>
+            <div className="email-container">
+                <button
+                    className={`${urbanist400.className} email-button`}
+                    onClick={copyEmail}
+                >
+                    viktor.risinger@gmail.com
+                </button>
+                {clipboardMessage && (
+                    <span className={`${urbanist700.className} copy-feedback`}>
+                        {clipboardMessage}
+                    </span>
+                )}
+            </div>
+        </div>
+    );
 }
