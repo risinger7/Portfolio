@@ -4,47 +4,49 @@ import styles from "./projects.module.css";
 import { urbanist900, urbanist700 } from "@/components/styles/styles.fonts";
 import { TransitionLink } from "../navbar/TransitionLink";
 import { useEffect, useRef } from "react";
+import Footer from "../footer/Footer";
+import Image from "next/image";
 
 const programmingProjects = [
     {
         href: "projects/knowtes",
-        image: "./knowtes/knowtes1.png",
+        image: "/knowtes/knowtes1.png",
         alt: "Knowtes",
         title: "Knowtes",
     },
     {
         href: "projects/hel",
-        image: "./hel/hel-och-stark1.png",
+        image: "/hel/hel-och-stark1.png",
         alt: "hel-image",
         title: "Hel & Stark",
     },
     {
         href: "projects/clira",
-        image: "./clira/clira123.jpg",
+        image: "/clira/clira123.jpg",
         alt: "clira-image",
         title: "Clira",
     },
     {
         href: "projects/event",
-        image: "./event/event1.png",
+        image: "/event/event1.png",
         alt: "event-image",
         title: "Event",
     },
     {
         href: "projects/game",
-        image: "./game/snappyblock1.png",
+        image: "/game/snappyblock1.png",
         alt: "game-image",
         title: "Snappy-block",
     },
     {
         href: "projects/toys",
-        image: "./toys/toys2.png",
+        image: "/toys/toys2.png",
         alt: "toys-image",
         title: "ReJoi",
     },
     {
         href: "projects/firstwebsite",
-        image: "./karaoke/karaoke1.png",
+        image: "/karaoke/karaoke1.png",
         alt: "karaoke-image",
         title: "Karaoke",
     },
@@ -53,13 +55,13 @@ const programmingProjects = [
 const cadProjects = [
     {
         href: "projects/phone",
-        image: "./phone/phone-persp.jpg",
+        image: "/phone/phone-persp.jpg",
         alt: "phone-image",
         title: "Phone design",
     },
     {
         href: "projects/remote",
-        image: "./remote/remote-persp-back.jpg",
+        image: "/remote/remote-persp-back.jpg",
         alt: "remote-image",
         title: "Remote design",
     },
@@ -67,6 +69,7 @@ const cadProjects = [
 
 export default function Projects() {
     const transition = "project-zoom-in";
+    const programmingTitleRef = useRef<HTMLHeadingElement>(null);
     const cadTitleRef = useRef<HTMLHeadingElement>(null);
     const programmingGridRef = useRef<HTMLDivElement>(null);
     const cadGridRef = useRef<HTMLDivElement>(null);
@@ -97,6 +100,7 @@ export default function Projects() {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add(styles.fadeIn);
+                        titleObserver.unobserve(entry.target);
                     }
                 });
             },
@@ -106,6 +110,8 @@ export default function Projects() {
         if (programmingGridRef.current)
             observer.observe(programmingGridRef.current);
         if (cadGridRef.current) observer.observe(cadGridRef.current);
+        if (programmingTitleRef.current)
+            titleObserver.observe(programmingTitleRef.current);
         if (cadTitleRef.current) titleObserver.observe(cadTitleRef.current);
 
         return () => {
@@ -118,7 +124,10 @@ export default function Projects() {
         <>
             <Navbar />
             <div className={styles.container}>
-                <h1 className={`${urbanist700.className} ${styles.title}`}>
+                <h1
+                    ref={programmingTitleRef}
+                    className={`${urbanist700.className} ${styles.title}`}
+                >
                     Programming
                 </h1>
                 <div ref={programmingGridRef} className={styles.grid}>
@@ -129,9 +138,11 @@ export default function Projects() {
                             pageTransition={transition}
                         >
                             <div className={styles.item}>
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.alt}
+                                    fill
+                                    sizes="(max-width: 800px) 90vw, (max-width: 1200px) 45vw, 30vw"
                                     className={styles.project__image}
                                 />
                                 <div
@@ -158,9 +169,11 @@ export default function Projects() {
                             pageTransition={transition}
                         >
                             <div className={styles.item}>
-                                <img
+                                <Image
                                     src={project.image}
                                     alt={project.alt}
+                                    fill
+                                    sizes="(max-width: 800px) 90vw, (max-width: 1200px) 45vw, 30vw"
                                     className={styles.project__image}
                                 />
                                 <div
@@ -173,6 +186,7 @@ export default function Projects() {
                     ))}
                 </div>
             </div>
+            <Footer />
         </>
     );
 }

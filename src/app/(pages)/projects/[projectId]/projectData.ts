@@ -52,7 +52,7 @@ export const projectData: ProjectData = {
     },
 
     clira: {
-        images: ["/clira/image61.png", "/clira/clira123.jpg"],
+        images: ["/clira/clira123.jpg", "/clira/image61.png"],
         title: "Clira",
         content:
             "Clira is a startup focused on transforming the procurement landscape by streamlining processes through advanced web technology. With a focus on both public and private procurements, Clira’s mission is to maximize competition while minimizing corruption. During my 8-month internship, I contributed to the platform by building features with a modern tech stack, including Laravel, React, Next.js, and Docker. For my final project at Clira, I developed an inventory feature based on a provided design, enabling customers to manage their stock more efficiently. This experience strengthened my skills in both frontend and backend development and taught me how to navigate a professional environment, enhancing my ability to work both collaboratively and independently as a programmer. If you are still greeted by an AI-picture when clicking the link below, I apologize in advance.",

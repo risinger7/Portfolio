@@ -1,6 +1,9 @@
-"use client";
 import Project from "@/components/Projects/project/Project";
 import { projectData } from "./projectData";
+
+export async function generateStaticParams() {
+  return Object.keys(projectData).map((projectId) => ({ projectId }));
+}
 
 type ProjectPageProps = {
   params: {

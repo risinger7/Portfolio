@@ -33,17 +33,18 @@ export default function Project(props: ProjectProps) {
                     props.color ? props.color : ""
                 }`}
             >
-                <div className="absolute flex justify-center">
-                    <button
-                        className="goback-button"
-                        onClick={() => handleGoBack()}
-                    >
-                        <ChevronLeft size={38} />
-                    </button>
-                </div>
                 <div
                     className={`grid-container mt-12 ${props.color ? props.color : ""}`}
                 >
+                    <div className="grid-item goback-wrapper">
+                        <button
+                            className={`${urbanist400.className} goback-button`}
+                            onClick={() => handleGoBack()}
+                        >
+                            <ChevronLeft size={18} />
+                            Back
+                        </button>
+                    </div>
                     <h1
                         className={`${urbanist700.className} grid-item grid-title`}
                     >

@@ -1,112 +1,117 @@
 .grid-container {
-  padding-top: 4rem;
-  background-color: var(--background);
-  min-height: 100%;
-  width: 100%;
-  display: grid;
-  row-gap: 2rem;
-  grid-template-columns: [sceen-start] 2rem [content-start] 1fr [content-end] 2rem [sceen-end];
-  grid-template-rows: auto;
+    padding-top: 4rem;
+    background-color: var(--background);
+    min-height: 100%;
+    width: 100%;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: [sceen-start] 2rem [content-start] 1fr [content-end] 2rem [sceen-end];
+    grid-template-rows: auto;
 }
 
 .grid-item {
-  grid-column: content-start / content-end;
-  justify-self: center;
-  justify-items: center;
-  height: 100%;
-  max-width: 800px;
+    grid-column: content-start / content-end;
+    justify-self: center;
+    justify-items: center;
+    height: 100%;
+    max-width: 800px;
+}
+
+.grid-item.goback-wrapper {
+    justify-self: start;
+    padding-top: 0.5rem;
 }
 
 .goback-button {
-  margin-top: 5rem;
-  margin-left: 1rem;
-  padding: 0.5rem;
-  transition: all 0.5s ease-in-out;
-  position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5em 1em;
+    font-size: 14px;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--foreground);
+    cursor: pointer;
+    opacity: 0.65;
+    transition:
+        opacity 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    letter-spacing: 0.01em;
 }
 
-.goback-button::after {
-  content: "";
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  opacity: 1;
-  background-color: transparent;
-  border: 1px solid var(--foreground);
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(1.6);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+.goback-button:hover {
+    opacity: 1;
+    transform: translateY(-2px);
 }
 
-.goback-button:hover::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+.goback-button:active {
+    transform: translateY(0);
 }
 
 .grid-title {
-  font-size: clamp(2rem, 2rem + 3vw, 5rem);
-  line-height: 1.2;
-  padding: 2rem;
+    font-size: clamp(2rem, 2rem + 3vw, 5rem);
+    line-height: 1.2;
+    padding: 2rem 2rem 0.5rem 2rem;
 }
 
 .grid-content {
-  font-size: 1rem;
-  line-height: 1.2;
-  color: var(--foreground);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--foreground);
 }
 
 .grid-icons {
-  padding-top: 1rem;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .grid-icon {
-  cursor: default;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  border: 1px solid var(--foreground);
-  border-radius: 0.5rem;
-  color: var(--foreground);
+    cursor: default;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 1px solid var(--foreground);
+    border-radius: 0.5rem;
+    color: var(--foreground);
+    opacity: 0.7;
 }
 
 .grid-link {
-  cursor: pointer;
-  background-color: var(--foreground);
-  color: var(--background);
-  transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 1;
+    background-color: var(--foreground);
+    color: var(--background);
+    transition: all 0.3s ease;
 }
 .grid-link:hover {
-  background-color: var(--oredish);
-  color: white;
+    background-color: var(--new-orange);
+    color: white;
 }
 
 /* Project colors */
 .pink {
-  color: #d31efe;
-  background-color: rgb(43, 153, 255);
+    color: #d31efe;
+    background-color: rgb(43, 153, 255);
 }
 
 /* Medium screens - Tablets */
 @media screen and (600px < width < 900px) {
-  .grid-container {
-    grid-template-columns: [sceen-start] 1rem [content-start] 1fr [content-end] 1rem [sceen-end];
-  }
-  .grid-item {
-    max-width: 600px;
-  }
+    .grid-container {
+        grid-template-columns: [sceen-start] 1rem [content-start] 1fr [content-end] 1rem [sceen-end];
+    }
+    .grid-item {
+        max-width: 600px;
+    }
 }
 
 /* Small screens - Mobile */
 @media screen and (width <= 600px) {
-  .grid-container {
-    column-gap: 0;
-    width: 100%;
-  }
-  .grid-item {
-    max-width: 360px;
-  }
+    .grid-container {
+        column-gap: 0;
+        width: 100%;
+    }
+    .grid-item {
+        max-width: 360px;
+    }
 }

@@ -7,8 +7,12 @@
   margin-bottom: 4rem;
 }
 
+/* title animation (shared by both Programming and CAD titles) */
 .title {
   font-size: 32px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 /* Phone layout */
@@ -28,17 +32,16 @@
   height: 200px;
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .project__image {
   background-color: var(--background);
   overflow: hidden;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  display: block;
-  transition: all 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
 }
 
 .project__noImage {
@@ -75,10 +78,19 @@
 
 .item:hover {
   transform: scale(1.02);
-  /* border: 1px solid var(--grid-item-border); */
 }
 
-/* Bigger screeens */
+/* Keyboard focus */
+.item:focus-within .overlayText {
+  opacity: 0.7;
+}
+
+.item:focus-within {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+/* Bigger screens */
 
 @media (800px < width) {
   .grid {
@@ -92,12 +104,7 @@
   }
 }
 
-/* Animations, title */
-
-.item {
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
+/* Animations */
 
 .fadeInUp {
   animation: fadeInUp 0.6s ease forwards;
@@ -125,4 +132,28 @@
 .fadeIn {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    opacity: 1;
+    animation: none;
+    transition: none;
+  }
+
+  .title,
+  .cadTitle {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .project__image {
+    transition: none;
+  }
+
+  .overlayText {
+    transition: none;
+  }
 }

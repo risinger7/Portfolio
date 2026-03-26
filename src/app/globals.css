@@ -43,6 +43,7 @@
 .dark {
     --background: var(--darkblue);
     --foreground: rgb(251, 250, 244);
+    --gray-foreground: #0f111500;
 }
 
 html {

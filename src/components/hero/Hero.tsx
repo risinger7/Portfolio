@@ -39,8 +39,9 @@ export default function Hero() {
             </div>
 
             <div className="hero-container">
-                <div className={`hero-content ${isLoaded ? "content-visible" : ""}`}>
-
+                <div
+                    className={`hero-content ${isLoaded ? "content-visible" : ""}`}
+                >
                     <div className={`${switzer400.className} hero-badge`}>
                         <span className="badge-dot" />
                         Open to work
@@ -50,35 +51,43 @@ export default function Hero() {
                         <h1 className={`${urbanist900.className} hero-title`}>
                             Fullstack
                         </h1>
-                        <h1 className={`${urbanist900.className} hero-title title-accent`}>
+                        <h1
+                            className={`${urbanist900.className} hero-title title-accent`}
+                        >
                             Developer
                         </h1>
                     </div>
 
                     <p className={`${switzer400.className} hero-subtitle`}>
-                        Design-driven engineer crafting fast,<br />
+                        Design-driven engineer crafting fast,
+                        <br />
                         user-centered web experiences.
                     </p>
 
                     <div className="hero-ctas">
-                        <TransitionLink href="about" pageTransition="about-transition">
-                            <button className={`${urbanist700.className} hero-btn-primary`}>
+                        <TransitionLink
+                            href="about"
+                            pageTransition="about-transition"
+                        >
+                            <button
+                                className={`${urbanist700.className} hero-btn-primary`}
+                            >
                                 Get in touch
                                 <span className="btn-arrow">↗</span>
                             </button>
                         </TransitionLink>
-                        <TransitionLink href="projects" pageTransition="projects-transition">
-                            <button className={`${urbanist700.className} hero-btn-ghost`}>
+                        <TransitionLink
+                            href="projects"
+                            pageTransition="projects-transition"
+                        >
+                            <button
+                                className={`${urbanist700.className} hero-btn-ghost`}
+                            >
                                 View my work
                             </button>
                         </TransitionLink>
                     </div>
                 </div>
-            </div>
-
-            <div className={`scroll-hint ${isLoaded ? "scroll-visible" : ""}`}>
-                <span className={`${switzer400.className} scroll-label`}>Scroll</span>
-                <div className="scroll-line" />
             </div>
         </div>
     );
