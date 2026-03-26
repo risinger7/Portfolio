@@ -64,9 +64,9 @@
 
 /* Use CSS variables for light/dark adaptive glow */
 :root {
-    --glow-1-light: rgba(26, 69, 97, 0.9);
-    --glow-2-light: rgba(208, 72, 42, 0.7);
-    --glow-3-light: rgba(224, 184, 40, 0.8);
+    --glow-1-light: rgba(26, 69, 97, 0.5);
+    --glow-2-light: rgba(208, 72, 42, 0.4);
+    --glow-3-light: rgba(224, 184, 40, 0.3);
 
     --glow-1-dark: rgba(15, 102, 160, 0.22);
     --glow-2-dark: rgba(247, 140, 108, 0.18);

@@ -1,19 +1,18 @@
 .grid-container {
-    padding-top: 4rem;
     background-color: var(--background);
     min-height: 100%;
     width: 100%;
     display: grid;
     row-gap: 2rem;
-    grid-template-columns: [sceen-start] 2rem [content-start] 1fr [content-end] 2rem [sceen-end];
+    padding-top: 4rem;
+    grid-template-columns: [screen-start] 2rem [content-start] 1fr [content-end] 2rem [screen-end];
     grid-template-rows: auto;
 }
 
 .grid-item {
     grid-column: content-start / content-end;
     justify-self: center;
-    justify-items: center;
-    height: 100%;
+    width: 100%;
     max-width: 800px;
 }
 
@@ -35,7 +34,6 @@
     opacity: 0.65;
     transition:
         opacity 0.2s ease,
-        border-color 0.2s ease,
         transform 0.2s ease;
     letter-spacing: 0.01em;
 }
@@ -52,7 +50,7 @@
 .grid-title {
     font-size: clamp(2rem, 2rem + 3vw, 5rem);
     line-height: 1.2;
-    padding: 2rem 2rem 0.5rem 2rem;
+    padding-bottom: 0.5rem;
 }
 
 .grid-content {
@@ -70,7 +68,7 @@
 
 .grid-icon {
     cursor: default;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--foreground);
     border-radius: 0.5rem;
     color: var(--foreground);
@@ -84,34 +82,30 @@
     color: var(--background);
     transition: all 0.3s ease;
 }
+
 .grid-link:hover {
     background-color: var(--new-orange);
     color: white;
 }
 
-/* Project colors */
-.pink {
-    color: #d31efe;
-    background-color: rgb(43, 153, 255);
-}
-
 /* Medium screens - Tablets */
-@media screen and (600px < width < 900px) {
+@media screen and (600px <= width < 900px) {
     .grid-container {
-        grid-template-columns: [sceen-start] 1rem [content-start] 1fr [content-end] 1rem [sceen-end];
+        grid-template-columns: [screen-start] 1rem [content-start] 1fr [content-end] 1rem [screen-end];
     }
+
     .grid-item {
         max-width: 600px;
     }
 }
 
 /* Small screens - Mobile */
-@media screen and (width <= 600px) {
+@media screen and (width < 600px) {
     .grid-container {
-        column-gap: 0;
-        width: 100%;
+        grid-template-columns: [screen-start] 0.5rem [content-start] 1fr [content-end] 0.5rem [screen-end];
     }
+
     .grid-item {
-        max-width: 360px;
+        max-width: 100%;
     }
 }
