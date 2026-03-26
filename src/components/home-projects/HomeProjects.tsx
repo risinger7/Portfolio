@@ -25,7 +25,7 @@ export default function HomeProjects() {
                     }
                 });
             },
-            { threshold: 0.6 },
+            { threshold: 0.15 },
         );
         cardsRef.current.forEach((el) => el && observer.observe(el));
         return () => observer.disconnect();
