@@ -244,7 +244,7 @@
     background: linear-gradient(
         125deg,
         var(--new-black) 0%,
-        var(--new-white) 100%
+        var(--new-gray) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

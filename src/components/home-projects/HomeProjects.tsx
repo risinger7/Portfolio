@@ -133,7 +133,9 @@ export default function HomeProjects() {
                 >
                     <button className={`${urbanist700.className} hp-view-all`}>
                         View all projects
-                        <span className="hp-arrow">↗</span>
+                        <svg className="hp-arrow" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M1.5 9.5L9.5 1.5M9.5 1.5H3.5M9.5 1.5V7.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
                     </button>
                 </TransitionLink>
             </div>
