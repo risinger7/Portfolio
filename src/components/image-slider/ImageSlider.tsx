@@ -1,6 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
-import Image from "next/image";
 import "./imageSlider.css";
 
 type ImageSliderProps = {
@@ -29,9 +28,7 @@ export default function ImageSlider({ images }: ImageSliderProps) {
       >
         {images.map((image) => {
           return (
-            <div key={image} className="image-wrapper">
-              <Image src={image} alt="" fill className="image" />
-            </div>
+            <img key={image} src={image} alt="" loading="lazy" className="image" />
           );
         })}
       </div>
