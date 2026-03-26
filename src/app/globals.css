@@ -21,28 +21,28 @@
 /* Light theme (default) */
 
 :root {
-    --background: rgb(250, 248, 242);
+    --background: #e7e7dd;
     --foreground: #0f1115;
     --darkblue: #0f1115;
     --bluish: rgb(15, 102, 160);
-    --fade: rgb(138, 138, 138);
-    --hero-background: rgba(250, 248, 242, 0.4);
-    --oredish: #f78c6c;
+    --oredish: #fe5e3acd;
     --redish: #f97583;
-    --yellowish: #eebe0f;
-    --hero-button-border: #0f11156b;
-    --hero-button-text: #0f1115d1;
+    /* New colors */
+    --new-orange: #fe5e3a;
+    --new-black: #1f1d1e;
+    --new-white: #e7e7dd;
+
+    /* Old colors */
+    /*
+        old bg - rgb(250, 248, 242);
+        darkblue - #0f1115;
+
+    */
 }
 
 .dark {
-    --hero-button-text: #fff;
-    --hero-button-border: #ffffff40;
     --background: var(--darkblue);
     --foreground: rgb(251, 250, 244);
-    --yellow: #eebe0f;
-    --fade: rgb(8, 8, 8);
-    --hero-background: rgba(0, 0, 0, 0.4);
-    --grid-item-border: rgb(251, 250, 244);
 }
 
 html {
@@ -52,7 +52,6 @@ html {
 }
 
 /* page-transitions on the body element */
-
 .stop-overflow {
     overflow: hidden;
 }
@@ -78,7 +77,7 @@ html {
     transform: translateY(-200px);
 }
 
-/* NEW: Project zoom transitions */
+/* Project zoom transitions */
 .project-zoom-in {
     overflow: hidden;
     filter: blur(6px);
